@@ -53,7 +53,7 @@
             // LogoPicture
             // 
             this.LogoPicture.Image = ((System.Drawing.Image)(resources.GetObject("LogoPicture.Image")));
-            this.LogoPicture.InitialImage = ((System.Drawing.Image)(resources.GetObject("LogoPicture.InitialImage")));
+            this.LogoPicture.InitialImage = null;
             this.LogoPicture.Location = new System.Drawing.Point(13, 13);
             this.LogoPicture.Name = "LogoPicture";
             this.LogoPicture.Size = new System.Drawing.Size(150, 150);
