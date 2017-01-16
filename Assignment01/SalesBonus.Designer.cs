@@ -122,39 +122,44 @@
             // 
             // EmployeeNameText
             // 
-            this.EmployeeNameText.Location = new System.Drawing.Point(184, 175);
+            this.EmployeeNameText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.EmployeeNameText.Location = new System.Drawing.Point(184, 173);
             this.EmployeeNameText.Name = "EmployeeNameText";
-            this.EmployeeNameText.Size = new System.Drawing.Size(245, 26);
+            this.EmployeeNameText.Size = new System.Drawing.Size(245, 30);
             this.EmployeeNameText.TabIndex = 1;
             // 
             // EmployeeIdText
             // 
-            this.EmployeeIdText.Location = new System.Drawing.Point(184, 220);
+            this.EmployeeIdText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.EmployeeIdText.Location = new System.Drawing.Point(184, 218);
             this.EmployeeIdText.Name = "EmployeeIdText";
-            this.EmployeeIdText.Size = new System.Drawing.Size(147, 26);
+            this.EmployeeIdText.Size = new System.Drawing.Size(147, 30);
             this.EmployeeIdText.TabIndex = 2;
             // 
             // HoursWorkedText
             // 
-            this.HoursWorkedText.Location = new System.Drawing.Point(184, 265);
+            this.HoursWorkedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.HoursWorkedText.Location = new System.Drawing.Point(184, 263);
             this.HoursWorkedText.Name = "HoursWorkedText";
-            this.HoursWorkedText.Size = new System.Drawing.Size(147, 26);
+            this.HoursWorkedText.Size = new System.Drawing.Size(147, 30);
             this.HoursWorkedText.TabIndex = 3;
             // 
             // TotalSalesText
             // 
-            this.TotalSalesText.Location = new System.Drawing.Point(184, 310);
+            this.TotalSalesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TotalSalesText.Location = new System.Drawing.Point(184, 308);
             this.TotalSalesText.Name = "TotalSalesText";
-            this.TotalSalesText.Size = new System.Drawing.Size(147, 26);
+            this.TotalSalesText.Size = new System.Drawing.Size(147, 30);
             this.TotalSalesText.TabIndex = 4;
             // 
             // SalesBonusText
             // 
             this.SalesBonusText.BackColor = System.Drawing.Color.White;
-            this.SalesBonusText.Location = new System.Drawing.Point(184, 355);
+            this.SalesBonusText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.SalesBonusText.Location = new System.Drawing.Point(184, 353);
             this.SalesBonusText.Name = "SalesBonusText";
             this.SalesBonusText.ReadOnly = true;
-            this.SalesBonusText.Size = new System.Drawing.Size(147, 26);
+            this.SalesBonusText.Size = new System.Drawing.Size(147, 30);
             this.SalesBonusText.TabIndex = 11;
             this.SalesBonusText.TabStop = false;
             // 
