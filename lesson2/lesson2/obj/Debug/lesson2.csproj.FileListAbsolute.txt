@@ -1,0 +1,9 @@
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\lesson2\lesson2\bin\Debug\lesson2.exe.config
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\lesson2\lesson2\bin\Debug\lesson2.exe
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\lesson2\lesson2\bin\Debug\lesson2.pdb
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\lesson2\lesson2\obj\Debug\lesson2.csprojResolveAssemblyReference.cache
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\lesson2\lesson2\obj\Debug\lesson2.Form1.resources
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\lesson2\lesson2\obj\Debug\lesson2.Properties.Resources.resources
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\lesson2\lesson2\obj\Debug\lesson2.csproj.GenerateResource.Cache
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\lesson2\lesson2\obj\Debug\lesson2.exe
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\lesson2\lesson2\obj\Debug\lesson2.pdb
