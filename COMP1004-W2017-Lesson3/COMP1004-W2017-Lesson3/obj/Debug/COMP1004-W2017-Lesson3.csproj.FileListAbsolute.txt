@@ -1,0 +1,9 @@
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004-W2017-Lesson3\COMP1004-W2017-Lesson3\bin\Debug\COMP1004-W2017-Lesson2.exe.config
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004-W2017-Lesson3\COMP1004-W2017-Lesson3\bin\Debug\COMP1004-W2017-Lesson2.exe
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004-W2017-Lesson3\COMP1004-W2017-Lesson3\bin\Debug\COMP1004-W2017-Lesson2.pdb
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004-W2017-Lesson3\COMP1004-W2017-Lesson3\obj\Debug\COMP1004-W2017-Lesson3.csprojResolveAssemblyReference.cache
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004-W2017-Lesson3\COMP1004-W2017-Lesson3\obj\Debug\COMP1004_W2017_Lesson3.CalculatorForm.resources
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004-W2017-Lesson3\COMP1004-W2017-Lesson3\obj\Debug\COMP1004_W2017_Lesson3.Properties.Resources.resources
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004-W2017-Lesson3\COMP1004-W2017-Lesson3\obj\Debug\COMP1004-W2017-Lesson3.csproj.GenerateResource.Cache
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004-W2017-Lesson3\COMP1004-W2017-Lesson3\obj\Debug\COMP1004-W2017-Lesson2.exe
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004-W2017-Lesson3\COMP1004-W2017-Lesson3\obj\Debug\COMP1004-W2017-Lesson2.pdb

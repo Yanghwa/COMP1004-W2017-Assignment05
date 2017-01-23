@@ -257,6 +257,8 @@
             this.Controls.Add(this.EmployeeId);
             this.Controls.Add(this.EmployeeName);
             this.Controls.Add(this.LogoPicture);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MailOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SalesBonus";
