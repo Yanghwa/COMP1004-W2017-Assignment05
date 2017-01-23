@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Assignment01
+namespace COMP1004_W2017_Lesson2
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Assignment01
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MailOrder());
+            Application.Run(new CalculatorForm());
         }
     }
 }

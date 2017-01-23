@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Assignment01
 {
-    public partial class SalesBonus : Form
+    public partial class MailOrder : Form
     {
-        public SalesBonus()
+        public MailOrder()
         {
             InitializeComponent();
         }

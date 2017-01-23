@@ -10,3 +10,9 @@ C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\As
 C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004\Assignment01\Assignment01\bin\Debug\Assignment01.exe.config
 C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004\Assignment01\Assignment01\obj\Debug\Assignment01.exe
 C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004\Assignment01\Assignment01\obj\Debug\Assignment01.pdb
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004\Assignment01\Assignment01\bin\Debug\Assignment01.exe
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004\Assignment01\Assignment01\bin\Debug\Assignment01.pdb
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004\Assignment01\Assignment01\obj\Debug\Assignment01.csprojResolveAssemblyReference.cache
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004\Assignment01\Assignment01\obj\Debug\Assignment01.Properties.Resources.resources
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004\Assignment01\Assignment01\obj\Debug\Assignment01.MailOrder.resources
+C:\Users\Junghwan Yang\Desktop\3_semester\Rapid_application_development\codes\COMP1004\Assignment01\Assignment01\obj\Debug\Assignment01.csproj.GenerateResource.Cache
