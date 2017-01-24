@@ -37,6 +37,7 @@ namespace Assignment01
         private string _salesBonus;
         private string _currencySymbol;
         private string _errorMessages;
+        private bool _errorExist = false;
 
         //CONSTRUCTORS --------------------------
 
@@ -136,28 +137,23 @@ namespace Assignment01
         }
 
         /// <summary>
-        /// Event handler for Print Button, it print all information inside of messagebox
+        /// Event handler for Calculate, Pring Button, is calculates total bonus depending on each parameters and print with clicking print button
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void PrintButton_Click(object sender, EventArgs e)
+        private void CalculatePrintButton_Click(object sender, EventArgs e)
         {
-            CalculateButton_Click(sender, e);
-            MessageBox.Show(Language.EmployeeName + _employeeName + "\n" + Language.EmployeeId + _employeeId + "\n" + Language.TotalHoursWorked + _workedHours + "\n" + Language.TotalMontlySales + _totalSales + "\n" + Language.SaleBonus + _salesBonus, "Total Bonus Summary");
-        }
-
-        /// <summary>
-        /// Event handler for Calculate Button, is calculates total bonus depending on each parameters
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CalculateButton_Click(object sender, EventArgs e)
-        {
+            Button CalculatePrintButton = sender as Button;
             decimal totalBonusDecimal;
             decimal totalSales;
             decimal workHours;
             _localizeLanguage();
             _saveEmployeeInformation();
+            if (_errorExist)
+            {
+                _errorExist = false;
+                return;
+            }
             if (Decimal.TryParse(_totalSales, out totalSales))
             {
                 totalSales = Decimal.Parse(_totalSales);
@@ -173,6 +169,14 @@ namespace Assignment01
             Button CalculateButton = sender as Button;
             _salesBonus = _currencySymbol + totalBonusDecimal.ToString("F");
             SalesBonusText.Text = _salesBonus;
+            switch (CalculatePrintButton.Tag as String)
+            {
+                case "Print":
+                    MessageBox.Show(Language.EmployeeName + _employeeName + "\n" + Language.EmployeeId + _employeeId + "\n" + Language.TotalHoursWorked + _workedHours + "\n" + Language.TotalMontlySales + _totalSales + "\n" + Language.SaleBonus + _salesBonus, "Total Bonus Summary");
+                    break;
+                default:
+                    break;
+            }
         }
 
         /// <summary>
@@ -217,29 +221,30 @@ namespace Assignment01
         /// <summary>
         /// This method shows errorMessages what is wrong
         /// </summary>
-        private Boolean _errorCheckingMessages()
+        private void _errorCheckingMessages()
         {
             if (string.IsNullOrEmpty(_employeeId))
             {
                 _errorMessages += Language.NoEmployeeId + "\n";
+                _errorExist = true;
             }
             if (string.IsNullOrEmpty(_employeeName))
             {
                 _errorMessages += Language.NoEmployeeName + "\n";
+                _errorExist = true;
             }
             if (Decimal.Parse(_workedHours) > 160)
             {
                 _errorMessages += Language.TooMuchHours + "\n";
+                _errorExist = true;
             }
             if (string.IsNullOrEmpty(_errorMessages))
             {
-                return true;
             }
             else
             {
                 MessageBox.Show(_errorMessages, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 _errorMessages = "";
-                return false;
             }
         }
 
@@ -277,7 +282,7 @@ namespace Assignment01
         /// <param name="e"></param>
         private void TotalMontlySalesText_Leave(object sender, EventArgs e)
         {
-            TotalMontlySalesText.Text = _currencySymbol + string.Format("{0:#,##0.00}", double.Parse(_totalSales));
+            //TotalMontlySalesText.Text = _currencySymbol + string.Format("{0:#,##0.00}", double.Parse(_totalSales));
         }
     }
 }

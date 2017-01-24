@@ -184,7 +184,7 @@
             this.CalculateButton.TabIndex = 8;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
-            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
+            this.CalculateButton.Click += new System.EventHandler(this.CalculatePrintButton_Click);
             // 
             // PrintButton
             // 
@@ -194,9 +194,10 @@
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(128, 37);
             this.PrintButton.TabIndex = 9;
+            this.PrintButton.Tag = "Print";
             this.PrintButton.Text = "Print";
             this.PrintButton.UseVisualStyleBackColor = true;
-            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            this.PrintButton.Click += new System.EventHandler(this.CalculatePrintButton_Click);
             // 
             // ClearButton
             // 
