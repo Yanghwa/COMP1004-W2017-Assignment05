@@ -49,7 +49,7 @@ namespace Assignment01
         }
 
         /// <summary>
-        /// Save Employee information to calculate total bonus amount
+        /// This method saves Employee information to calculate total bonus amount and to validate each information
         /// </summary>
         private void _saveEmployeeInformation()
         {
@@ -62,11 +62,11 @@ namespace Assignment01
         }
 
         /// <summary>
-        /// Validate if each parameters are suitable format and values
+        /// This method validates if each parameters are suitable format and values
         /// </summary>
         private void _validateParameters()
         {
-            if(string.IsNullOrEmpty(_workedHours))
+            if (string.IsNullOrEmpty(_workedHours))
             {
                 _workedHours = "0";
                 TotalHoursWorkedText.Text = _workedHours;
@@ -75,7 +75,7 @@ namespace Assignment01
             {
                 _workedHours = TotalHoursWorkedText.Text;
             }
-            if(string.IsNullOrEmpty(_totalSales))
+            if (string.IsNullOrEmpty(_totalSales))
             {
                 _totalSales = "0";
                 TotalMontlySalesText.Text = _totalSales;
@@ -87,7 +87,7 @@ namespace Assignment01
         }
 
         /// <summary>
-        /// Localize language and change language
+        /// This method localizes language and change language depending on localization
         /// </summary>
         private void _localizeLanguage()
         {
@@ -101,6 +101,7 @@ namespace Assignment01
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-FR");
                 _currencySymbol = "€ ";
             }
+            // for Korean
             else
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("kr-KR");
@@ -118,7 +119,7 @@ namespace Assignment01
         }
 
         /// <summary>
-        /// Event handler for Clear Button
+        /// Event handler for Clear Button, it clear texts except total sales
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -135,18 +136,18 @@ namespace Assignment01
         }
 
         /// <summary>
-        /// Event handler for Print Button
+        /// Event handler for Print Button, it print all information inside of messagebox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void PrintButton_Click(object sender, EventArgs e)
         {
             CalculateButton_Click(sender, e);
-            MessageBox.Show(Language.EmployeeName + _employeeName + "\n" + Language.EmployeeId + _employeeId + "\n" + Language.TotalHoursWorked + _workedHours + "\n" + Language.TotalMontlySales+ _totalSales + "\n" + Language.SaleBonus+ _salesBonus, "Total Bonus Summary");
+            MessageBox.Show(Language.EmployeeName + _employeeName + "\n" + Language.EmployeeId + _employeeId + "\n" + Language.TotalHoursWorked + _workedHours + "\n" + Language.TotalMontlySales + _totalSales + "\n" + Language.SaleBonus + _salesBonus, "Total Bonus Summary");
         }
 
         /// <summary>
-        /// Event handler for Calculate Button
+        /// Event handler for Calculate Button, is calculates total bonus depending on each parameters
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -175,7 +176,7 @@ namespace Assignment01
         }
 
         /// <summary>
-        /// Detecting radio button to change language
+        /// Event handler for changing languages button, it detects radio button and changes language
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -193,22 +194,32 @@ namespace Assignment01
             }
         }
 
+        /// <summary>
+        /// Event handler for sales and hous text, it validates each values is suitable
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _numberValuesValidation(object sender, KeyPressEventArgs e)
         {
+            //only number and "." allowed
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
             {
                 e.Handled = true;
             }
             TextBox inputText = sender as TextBox;
+            //only one "." allowed
             if (e.KeyChar == '.' && inputText.Text.Contains("."))
             {
                 e.Handled = true;
             }
         }
 
+        /// <summary>
+        /// This method shows errorMessages what is wrong
+        /// </summary>
         private Boolean _errorCheckingMessages()
         {
-            if(string.IsNullOrEmpty(_employeeId))
+            if (string.IsNullOrEmpty(_employeeId))
             {
                 _errorMessages += Language.NoEmployeeId + "\n";
             }
@@ -232,18 +243,41 @@ namespace Assignment01
             }
         }
 
+        /// <summary>
+        /// Event handler for hours text, it validates if hours are lower than 160
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TotalHoursWorkedText_TextChanged(object sender, EventArgs e)
         {
-            if (decimal.Parse(TotalHoursWorkedText.Text) > 160)
+            try
             {
-                // If the number is negative, display it in Red.
-                TotalHoursWorkedText.ForeColor = Color.Red;
+                if (decimal.Parse(TotalHoursWorkedText.Text) > _maximumWorkHours)
+                {
+                    // If the number is negative, display it in Red.
+                    TotalHoursWorkedText.ForeColor = Color.Red;
+                }
+                else
+                {
+                    // If the number is not negative, display it in Black.
+                    TotalHoursWorkedText.ForeColor = Color.Black;
+                }
             }
-            else
+            catch
             {
-                // If the number is not negative, display it in Black.
-                //TotalHoursWorkedText.ForeColor = Color.Black;
+
             }
+
+        }
+
+        /// <summary>
+        /// Event handler for sales format, if cursor went out of this tab, it changes symbol and format depending on localization
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TotalMontlySalesText_Leave(object sender, EventArgs e)
+        {
+            TotalMontlySalesText.Text = _currencySymbol + string.Format("{0:#,##0.00}", double.Parse(_totalSales));
         }
     }
 }

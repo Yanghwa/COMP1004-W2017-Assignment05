@@ -159,6 +159,7 @@
             this.TotalMontlySalesText.Size = new System.Drawing.Size(147, 30);
             this.TotalMontlySalesText.TabIndex = 4;
             this.TotalMontlySalesText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this._numberValuesValidation);
+            this.TotalMontlySalesText.Leave += new System.EventHandler(this.TotalMontlySalesText_Leave);
             // 
             // SalesBonusText
             // 
