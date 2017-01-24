@@ -231,5 +231,19 @@ namespace Assignment01
                 return false;
             }
         }
+
+        private void TotalHoursWorkedText_TextChanged(object sender, EventArgs e)
+        {
+            if (decimal.Parse(TotalHoursWorkedText.Text) > 160)
+            {
+                // If the number is negative, display it in Red.
+                TotalHoursWorkedText.ForeColor = Color.Red;
+            }
+            else
+            {
+                // If the number is not negative, display it in Black.
+                //TotalHoursWorkedText.ForeColor = Color.Black;
+            }
+        }
     }
 }

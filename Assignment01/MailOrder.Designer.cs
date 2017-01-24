@@ -147,6 +147,7 @@
             this.TotalHoursWorkedText.Name = "TotalHoursWorkedText";
             this.TotalHoursWorkedText.Size = new System.Drawing.Size(147, 30);
             this.TotalHoursWorkedText.TabIndex = 3;
+            this.TotalHoursWorkedText.TextChanged += new System.EventHandler(this.TotalHoursWorkedText_TextChanged);
             this.TotalHoursWorkedText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this._numberValuesValidation);
             // 
             // TotalMontlySalesText
