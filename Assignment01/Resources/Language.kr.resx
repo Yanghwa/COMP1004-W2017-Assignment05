@@ -129,14 +129,26 @@
   <data name="EmployeeName" xml:space="preserve">
     <value>직원 이름 :</value>
   </data>
+  <data name="InvalidTotalSales" xml:space="preserve">
+    <value>총 판매량은 숫자만 기입 가능하다.</value>
+  </data>
   <data name="LanguageBox" xml:space="preserve">
     <value>언어</value>
+  </data>
+  <data name="NoEmployeeId" xml:space="preserve">
+    <value>직원 아이디를 입력해라.</value>
+  </data>
+  <data name="NoEmployeeName" xml:space="preserve">
+    <value>직원 이름을 입력해라.</value>
   </data>
   <data name="PrintButton" xml:space="preserve">
     <value>프린트</value>
   </data>
   <data name="SaleBonus" xml:space="preserve">
     <value>판매 보너스 :</value>
+  </data>
+  <data name="TooMuchHours" xml:space="preserve">
+    <value>일한 시간은 160시간을 못 넘는다.</value>
   </data>
   <data name="TotalHoursWorked" xml:space="preserve">
     <value>총 일한 시간 :</value>

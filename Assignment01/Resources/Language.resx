@@ -129,14 +129,26 @@
   <data name="EmployeeName" xml:space="preserve">
     <value>Employee's Name :</value>
   </data>
+  <data name="InvalidTotalSales" xml:space="preserve">
+    <value>Total sales should be the numbers.</value>
+  </data>
   <data name="LanguageBox" xml:space="preserve">
     <value>Languages</value>
+  </data>
+  <data name="NoEmployeeId" xml:space="preserve">
+    <value>You didn't put the employee id.</value>
+  </data>
+  <data name="NoEmployeeName" xml:space="preserve">
+    <value>You didn't put the employee name.</value>
   </data>
   <data name="PrintButton" xml:space="preserve">
     <value>Print</value>
   </data>
   <data name="SaleBonus" xml:space="preserve">
     <value>Sales Bonus :</value>
+  </data>
+  <data name="TooMuchHours" xml:space="preserve">
+    <value>Worked hours can't be over 160.</value>
   </data>
   <data name="TotalHoursWorked" xml:space="preserve">
     <value>Total Hours Worked :</value>

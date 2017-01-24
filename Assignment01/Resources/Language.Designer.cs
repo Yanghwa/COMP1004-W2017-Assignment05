@@ -97,11 +97,38 @@ namespace Assignment01.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total sales should be the numbers..
+        /// </summary>
+        internal static string InvalidTotalSales {
+            get {
+                return ResourceManager.GetString("InvalidTotalSales", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Languages.
         /// </summary>
         internal static string LanguageBox {
             get {
                 return ResourceManager.GetString("LanguageBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You didn&apos;t put the employee id..
+        /// </summary>
+        internal static string NoEmployeeId {
+            get {
+                return ResourceManager.GetString("NoEmployeeId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You didn&apos;t put the employee name..
+        /// </summary>
+        internal static string NoEmployeeName {
+            get {
+                return ResourceManager.GetString("NoEmployeeName", resourceCulture);
             }
         }
         
@@ -120,6 +147,15 @@ namespace Assignment01.Resources {
         internal static string SaleBonus {
             get {
                 return ResourceManager.GetString("SaleBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Worked hours can&apos;t be over 160..
+        /// </summary>
+        internal static string TooMuchHours {
+            get {
+                return ResourceManager.GetString("TooMuchHours", resourceCulture);
             }
         }
         

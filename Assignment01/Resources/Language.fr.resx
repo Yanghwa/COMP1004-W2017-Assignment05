@@ -129,14 +129,26 @@
   <data name="EmployeeName" xml:space="preserve">
     <value>Le nom de l'employé :</value>
   </data>
+  <data name="InvalidTotalSales" xml:space="preserve">
+    <value>Les ventes totales doivent être les chiffres.</value>
+  </data>
   <data name="LanguageBox" xml:space="preserve">
     <value>Langues</value>
+  </data>
+  <data name="NoEmployeeId" xml:space="preserve">
+    <value>Vous n'avez pas mis l'ID d'employé.</value>
+  </data>
+  <data name="NoEmployeeName" xml:space="preserve">
+    <value>Vous n'avez pas mis le nom de l'employé.</value>
   </data>
   <data name="PrintButton" xml:space="preserve">
     <value>Impression</value>
   </data>
   <data name="SaleBonus" xml:space="preserve">
     <value>Bonus de vente :</value>
+  </data>
+  <data name="TooMuchHours" xml:space="preserve">
+    <value>Les heures de travail ne peuvent excéder 160.</value>
   </data>
   <data name="TotalHoursWorked" xml:space="preserve">
     <value>Nombre total d'heures travaillées :</value>

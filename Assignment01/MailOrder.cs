@@ -18,6 +18,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,6 +35,8 @@ namespace Assignment01
         private int _maximumWorkHours = 160;
         private decimal _bonusAmountPercent = Decimal.Parse("0.02");
         private string _salesBonus;
+        private string _currencySymbol;
+        private string _errorMessages;
 
         //CONSTRUCTORS --------------------------
 
@@ -55,6 +58,7 @@ namespace Assignment01
             _workedHours = TotalHoursWorkedText.Text;
             _totalSales = TotalMontlySalesText.Text;
             _validateParameters();
+            _errorCheckingMessages();
         }
 
         /// <summary>
@@ -83,21 +87,24 @@ namespace Assignment01
         }
 
         /// <summary>
-        /// Validate language and change language
+        /// Localize language and change language
         /// </summary>
-        private void _validateLanguage()
+        private void _localizeLanguage()
         {
             if (this.RadioEnglishButton.Checked)
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("");
+                _currencySymbol = "$ ";
             }
             else if (this.RadioFrenchButton.Checked)
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("fr-FR");
+                _currencySymbol = "€ ";
             }
             else
             {
                 Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("kr-KR");
+                _currencySymbol = "₩ ";
             }
             EmployeeName.Text = Language.EmployeeName;
             EmployeeId.Text = Language.EmployeeId;
@@ -108,7 +115,6 @@ namespace Assignment01
             CalculateButton.Text = Language.CalculateButton;
             ClearButton.Text = Language.ClearButton;
             PrintButton.Text = Language.PrintButton;
-
         }
 
         /// <summary>
@@ -135,7 +141,6 @@ namespace Assignment01
         /// <param name="e"></param>
         private void PrintButton_Click(object sender, EventArgs e)
         {
-            _saveEmployeeInformation();
             CalculateButton_Click(sender, e);
             MessageBox.Show(Language.EmployeeName + _employeeName + "\n" + Language.EmployeeId + _employeeId + "\n" + Language.TotalHoursWorked + _workedHours + "\n" + Language.TotalMontlySales+ _totalSales + "\n" + Language.SaleBonus+ _salesBonus, "Total Bonus Summary");
         }
@@ -148,11 +153,24 @@ namespace Assignment01
         private void CalculateButton_Click(object sender, EventArgs e)
         {
             decimal totalBonusDecimal;
+            decimal totalSales;
+            decimal workHours;
+            _localizeLanguage();
             _saveEmployeeInformation();
-            TotalMontlySalesText.Text = "$" + string.Format("{0:#,##0.00}", double.Parse(_totalSales));
+            if (Decimal.TryParse(_totalSales, out totalSales))
+            {
+                totalSales = Decimal.Parse(_totalSales);
+            }
+            else
+            {
+                _totalSales = Regex.Replace(_totalSales, @"[^-?\d+\.]", "");
+                totalSales = Decimal.Parse(_totalSales);
+            }
+            workHours = Decimal.Parse(_workedHours);
+            totalBonusDecimal = totalSales * _bonusAmountPercent * (workHours / _maximumWorkHours);
+            TotalMontlySalesText.Text = _currencySymbol + string.Format("{0:#,##0.00}", double.Parse(_totalSales));
             Button CalculateButton = sender as Button;
-            totalBonusDecimal = System.Convert.ToDecimal(_totalSales) * _bonusAmountPercent * (System.Convert.ToDecimal(_workedHours) / _maximumWorkHours);
-            _salesBonus = "$" + totalBonusDecimal.ToString("F");
+            _salesBonus = _currencySymbol + totalBonusDecimal.ToString("F");
             SalesBonusText.Text = _salesBonus;
         }
 
@@ -163,7 +181,55 @@ namespace Assignment01
         /// <param name="e"></param>
         private void _language_CheckedChanged(object sender, EventArgs e)
         {
-            _validateLanguage();
+            _localizeLanguage();
+            ClearButton_Click(sender, e);
+            if (string.IsNullOrEmpty(_totalSales))
+            {
+            }
+            else
+            {
+                _totalSales = Regex.Replace(_totalSales, "$2", _currencySymbol);
+                TotalMontlySalesText.Text = _totalSales;
+            }
+        }
+
+        private void _numberValuesValidation(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == '.'))
+            {
+                e.Handled = true;
+            }
+            TextBox inputText = sender as TextBox;
+            if (e.KeyChar == '.' && inputText.Text.Contains("."))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private Boolean _errorCheckingMessages()
+        {
+            if(string.IsNullOrEmpty(_employeeId))
+            {
+                _errorMessages += Language.NoEmployeeId + "\n";
+            }
+            if (string.IsNullOrEmpty(_employeeName))
+            {
+                _errorMessages += Language.NoEmployeeName + "\n";
+            }
+            if (Decimal.Parse(_workedHours) > 160)
+            {
+                _errorMessages += Language.TooMuchHours + "\n";
+            }
+            if (string.IsNullOrEmpty(_errorMessages))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show(_errorMessages, "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                _errorMessages = "";
+                return false;
+            }
         }
     }
 }

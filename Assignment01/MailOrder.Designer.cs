@@ -147,6 +147,7 @@
             this.TotalHoursWorkedText.Name = "TotalHoursWorkedText";
             this.TotalHoursWorkedText.Size = new System.Drawing.Size(147, 30);
             this.TotalHoursWorkedText.TabIndex = 3;
+            this.TotalHoursWorkedText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this._numberValuesValidation);
             // 
             // TotalMontlySalesText
             // 
@@ -156,6 +157,7 @@
             this.TotalMontlySalesText.Name = "TotalMontlySalesText";
             this.TotalMontlySalesText.Size = new System.Drawing.Size(147, 30);
             this.TotalMontlySalesText.TabIndex = 4;
+            this.TotalMontlySalesText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this._numberValuesValidation);
             // 
             // SalesBonusText
             // 
@@ -264,6 +266,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.45454F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.54546F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.EmployeeNameText, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.EmployeeIdText, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.TotalHoursWorked, 0, 2);
