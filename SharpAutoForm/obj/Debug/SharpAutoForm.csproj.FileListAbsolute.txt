@@ -1,0 +1,9 @@
+C:\Users\Junghwan Yang\Desktop\COMP1004-Assignment02\SharpAutoForm\SharpAutoForm\bin\Debug\SharpAutoForm.exe.config
+C:\Users\Junghwan Yang\Desktop\COMP1004-Assignment02\SharpAutoForm\SharpAutoForm\bin\Debug\SharpAutoForm.exe
+C:\Users\Junghwan Yang\Desktop\COMP1004-Assignment02\SharpAutoForm\SharpAutoForm\bin\Debug\SharpAutoForm.pdb
+C:\Users\Junghwan Yang\Desktop\COMP1004-Assignment02\SharpAutoForm\SharpAutoForm\obj\Debug\SharpAutoForm.csprojResolveAssemblyReference.cache
+C:\Users\Junghwan Yang\Desktop\COMP1004-Assignment02\SharpAutoForm\SharpAutoForm\obj\Debug\SharpAutoForm.Properties.Resources.resources
+C:\Users\Junghwan Yang\Desktop\COMP1004-Assignment02\SharpAutoForm\SharpAutoForm\obj\Debug\SharpAutoForm.SharpAutoForm.resources
+C:\Users\Junghwan Yang\Desktop\COMP1004-Assignment02\SharpAutoForm\SharpAutoForm\obj\Debug\SharpAutoForm.csproj.GenerateResource.Cache
+C:\Users\Junghwan Yang\Desktop\COMP1004-Assignment02\SharpAutoForm\SharpAutoForm\obj\Debug\SharpAutoForm.exe
+C:\Users\Junghwan Yang\Desktop\COMP1004-Assignment02\SharpAutoForm\SharpAutoForm\obj\Debug\SharpAutoForm.pdb
