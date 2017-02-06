@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace SharpAutoForm
 {
-    partial class AboutBox : Form
+    partial class AboutBoxForm : Form
     {
-        public AboutBox()
+        public AboutBoxForm()
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);

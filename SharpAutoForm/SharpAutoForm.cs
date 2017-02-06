@@ -25,6 +25,9 @@ namespace SharpAutoForm
         private void aboutToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             AboutBoxForm aboutForm = new AboutBoxForm();
+
+            //modal method to display the form
+            aboutForm.ShowDialog();
         }
     }
 }
