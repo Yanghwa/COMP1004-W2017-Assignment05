@@ -16,5 +16,15 @@ namespace SharpAutoForm
         {
             InitializeComponent();
         }
+
+        private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void aboutToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            AboutBoxForm aboutForm = new AboutBoxForm();
+        }
     }
 }
