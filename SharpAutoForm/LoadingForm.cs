@@ -20,8 +20,8 @@ namespace SharpAutoForm
 
         private void LoadingTime_Tick(object sender, EventArgs e)
         {
-            this.Hide();
             this.LoadingTime.Enabled = false;
+            this.Close();
         }
     }
 }

@@ -50,23 +50,13 @@ namespace SharpAutoForm
             switch (ClickedButton.Tag.ToString())
             {
                 case "Calculate":
-                    LoadingForm Nowloading = new LoadingForm();
-                    Nowloading.previousForm = this;
-                    Nowloading.ShowDialog(this);
-                    _subTotal = _basePrice + _additionalOptions + _exteriorOptions;
-                    _salesTax = _subTotal * _taxRate;
-                    decimal Total = _subTotal + _salesTax;
-                    decimal AmountDue = Total - _tradeInAllowance;
-                    SalesTaxText.Text = string.Format("{0:#,##0.00}", _salesTax);
-                    SubTotalText.Text = string.Format("{0:#,##0.00}", _subTotal);
-                    TotalText.Text = string.Format("{0:#,##0.00}", Total);
-                    AmountDueText.Text = string.Format("{0:#,##0.00}", AmountDue);
+                    _calculateMenuToolStrip_Click(sender, e);
                     break;
                 case "Clear":
                     _initializeVariablesOptions();
                     break;
                 case "Exit":
-                    _exitSharpAutoForm_Click(sender, e);
+                    _exitMenuToolStrip_Click(sender, e);
                     break;
                 default:
                     break;
@@ -115,7 +105,7 @@ namespace SharpAutoForm
             }
         }
 
-        private void _exitSharpAutoForm_Click(object sender, EventArgs e)
+        private void _exitMenuToolStrip_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -234,10 +224,48 @@ namespace SharpAutoForm
             TotalText.Text = "";
             TradeAllowanceText.Text = "0";
             AmountDueText.Text = "";
-
-
+            StandardRadio.Checked = true;
+            StereoSystemCheck.Checked = LeatherInteriorCheck.Checked = ComputerNavigationCheck.Checked = false;
         }
 
-        
+        private void _basePriceTextIsZero_Enter(object sender, EventArgs e)
+        {
+            if(_basePrice.Equals(0))
+            {
+                this.Text = "";
+            } 
+        }
+
+        private void _tradeInAllowanceTextIsZero_Enter(object sender, EventArgs e)
+        {
+            if (TradeAllowanceText.Text.Equals("0"))
+            {
+                this.Text = "";
+            }
+        }
+
+        private void _clearMenuToolStrip_Click(object sender, EventArgs e)
+        {
+            _initializeVariablesOptions();
+        }
+
+        private void _calculateMenuToolStrip_Click(object sender, EventArgs e)
+        {
+            LoadingForm Nowloading = new LoadingForm();
+            Nowloading.previousForm = this;
+            Nowloading.ShowDialog(this);
+            _subTotal = _basePrice + _additionalOptions + _exteriorOptions;
+            _salesTax = _subTotal * _taxRate;
+            decimal Total = _subTotal + _salesTax;
+            decimal AmountDue = Total - _tradeInAllowance;
+            SalesTaxText.Text = string.Format("{0:#,##0.00}", _salesTax);
+            SubTotalText.Text = string.Format("{0:#,##0.00}", _subTotal);
+            TotalText.Text = string.Format("{0:#,##0.00}", Total);
+            AmountDueText.Text = string.Format("{0:#,##0.00}", AmountDue);
+            if (_additionalOptions + _exteriorOptions == 0)
+            {
+                AdditionalOptionsText.Text = string.Format("{0:#,##0.00}", 0);
+            }
+        }
     }
 }
