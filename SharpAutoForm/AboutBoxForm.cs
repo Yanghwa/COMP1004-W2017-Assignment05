@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SharpAutoForm
-{
+{   
+    /// <summary>
+    /// About splashed form in menu bar- help
+    /// </summary>
     partial class AboutBoxForm : Form
     {
+        //CONSTRUCTORS ------------------------
         public AboutBoxForm()
         {
             InitializeComponent();

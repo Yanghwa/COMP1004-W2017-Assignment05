@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,6 +31,7 @@ namespace SharpAutoForm
         private decimal _pearlizedExteriorOption = decimal.Parse("345.72");
         private decimal _customizedExteriorOption = decimal.Parse("599.99");
         private decimal _subTotal;
+        private string _currency = "$ ";
 
         // CONSTRUCTORS ---------------------------------
         public SharpAutoForm()
@@ -75,6 +77,11 @@ namespace SharpAutoForm
             aboutForm.ShowDialog();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _fontOptionEditMenu_Click(object sender, EventArgs e)
         {
             if (SharpAutoFontDialog.ShowDialog() == DialogResult.OK)
@@ -83,6 +90,11 @@ namespace SharpAutoForm
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _colorOptionEditMenu_Click(object sender, EventArgs e)
         {
             if(SharpAutoColorDialog.ShowDialog() == DialogResult.OK)
@@ -91,6 +103,11 @@ namespace SharpAutoForm
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _sharpAutoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("If you want to close, push OK button.", "Warning",
@@ -105,11 +122,21 @@ namespace SharpAutoForm
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _exitMenuToolStrip_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _additionalItems_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox ClickedCheckButton = sender as CheckBox;
@@ -146,9 +173,14 @@ namespace SharpAutoForm
                 default:
                     break;
             }
-            AdditionalOptionsText.Text = string.Format("{0:#,##0.00}", _additionalOptions + _exteriorOptions);
+            AdditionalOptionsText.Text = _currency + string.Format("{0:#,##0.00}", _additionalOptions + _exteriorOptions);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _exteriorOptionsRadio_Click(object sender, EventArgs e)
         {
             
@@ -167,9 +199,14 @@ namespace SharpAutoForm
                     _exteriorOptions = _standardExteriorOption;
                     break;
             }
-            AdditionalOptionsText.Text = string.Format("{0:#,##0.00}", _additionalOptions + _exteriorOptions);
+            AdditionalOptionsText.Text = _currency + string.Format("{0:#,##0.00}", _additionalOptions + _exteriorOptions);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _validateOnlyNumber(object sender, KeyPressEventArgs e)
         {
             //only number and "." allowed
@@ -184,7 +221,12 @@ namespace SharpAutoForm
                 e.Handled = true;
             }
         }
-
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _basePriceText_Leave(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(BasePriceText.Text)) {
@@ -194,21 +236,29 @@ namespace SharpAutoForm
                 _basePrice = decimal.Parse(BasePriceText.Text);
             }
             
-            BasePriceText.Text = string.Format("{0:#,##0.00}", _basePrice);
+            BasePriceText.Text = _currency + string.Format("{0:#,##0.00}", _basePrice);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _tradeAllowanceText_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(BasePriceText.Text))
+            if (string.IsNullOrEmpty(TradeAllowanceText.Text))
             {
                 _tradeInAllowance = decimal.Parse("0");
             } else
             {
                 _tradeInAllowance = decimal.Parse(TradeAllowanceText.Text);
             }
-            TradeAllowanceText.Text = string.Format("{0:#,##0.00}", _tradeInAllowance);
+            TradeAllowanceText.Text = _currency + string.Format("{0:#,##0.00}", _tradeInAllowance);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void _initializeVariablesOptions()
         {
             decimal _basePrice = decimal.Parse("0");
@@ -228,43 +278,69 @@ namespace SharpAutoForm
             StereoSystemCheck.Checked = LeatherInteriorCheck.Checked = ComputerNavigationCheck.Checked = false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _basePriceTextIsZero_Enter(object sender, EventArgs e)
         {
             if(_basePrice.Equals(0))
             {
-                this.Text = "";
-            } 
+                BasePriceText.Text = "";
+            } else
+            {
+                BasePriceText.Text = Regex.Replace(BasePriceText.Text, @"[^-?\d+\.]", "");
+            }
+            
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _tradeInAllowanceTextIsZero_Enter(object sender, EventArgs e)
         {
-            if (TradeAllowanceText.Text.Equals("0"))
+            if (_tradeInAllowance.Equals(0))
             {
-                this.Text = "";
+                TradeAllowanceText.Text = "";
+            } else
+            {
+                TradeAllowanceText.Text = Regex.Replace(TradeAllowanceText.Text, @"[^-?\d+\.]", "");
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _clearMenuToolStrip_Click(object sender, EventArgs e)
         {
             _initializeVariablesOptions();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _calculateMenuToolStrip_Click(object sender, EventArgs e)
         {
             LoadingForm Nowloading = new LoadingForm();
-            Nowloading.previousForm = this;
             Nowloading.ShowDialog(this);
             _subTotal = _basePrice + _additionalOptions + _exteriorOptions;
             _salesTax = _subTotal * _taxRate;
             decimal Total = _subTotal + _salesTax;
             decimal AmountDue = Total - _tradeInAllowance;
-            SalesTaxText.Text = string.Format("{0:#,##0.00}", _salesTax);
-            SubTotalText.Text = string.Format("{0:#,##0.00}", _subTotal);
-            TotalText.Text = string.Format("{0:#,##0.00}", Total);
-            AmountDueText.Text = string.Format("{0:#,##0.00}", AmountDue);
+            SalesTaxText.Text = _currency + string.Format("{0:#,##0.00}", _salesTax);
+            SubTotalText.Text = _currency + string.Format("{0:#,##0.00}", _subTotal);
+            TotalText.Text = _currency + string.Format("{0:#,##0.00}", Total);
+            AmountDueText.Text = _currency + string.Format("{0:#,##0.00}", AmountDue);
             if (_additionalOptions + _exteriorOptions == 0)
             {
-                AdditionalOptionsText.Text = string.Format("{0:#,##0.00}", 0);
+                AdditionalOptionsText.Text = _currency + string.Format("{0:#,##0.00}", 0);
             }
         }
     }

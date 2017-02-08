@@ -10,14 +10,23 @@ using System.Windows.Forms;
 
 namespace SharpAutoForm
 {
+    /// <summary>
+    /// LoadingForm for showing now loading/splashed form
+    /// </summary>
     public partial class LoadingForm : Form
     {
-        public Form previousForm = new Form();
+        //CONSTRUCTORS-------------
         public LoadingForm()
         {
             InitializeComponent();         
         }
 
+        //PRIVATE METHODS - HANDLERS---------------------
+        /// <summary>
+        /// Event handler timer - After 2 seconds, splashed form disappears
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoadingTime_Tick(object sender, EventArgs e)
         {
             this.LoadingTime.Enabled = false;
