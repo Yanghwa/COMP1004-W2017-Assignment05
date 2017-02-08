@@ -17,3 +17,4 @@ C:\Users\Junghwan Yang\Desktop\COMP1004-W2017-Assignment02\SharpAutoForm\obj\Deb
 C:\Users\Junghwan Yang\Desktop\COMP1004-W2017-Assignment02\SharpAutoForm\obj\Debug\SharpAutoForm.exe
 C:\Users\Junghwan Yang\Desktop\COMP1004-W2017-Assignment02\SharpAutoForm\obj\Debug\SharpAutoForm.pdb
 C:\Users\Junghwan Yang\Desktop\COMP1004-W2017-Assignment02\SharpAutoForm\obj\Debug\SharpAutoForm.AboutBoxForm.resources
+C:\Users\Junghwan Yang\Desktop\COMP1004-W2017-Assignment02\SharpAutoForm\obj\Debug\SharpAutoForm.LoadingForm.resources
