@@ -1,4 +1,14 @@
-﻿using System;
+﻿//FileName: AboutBoxForm.cs
+//FileType: Visual C# Source file
+//Author: Junghwan Yang
+//Created On: 30/01/2017
+//Copy Rights: Junghwan Yang
+//Description: This app shows information about author and application instruction.
+//            
+
+/////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;

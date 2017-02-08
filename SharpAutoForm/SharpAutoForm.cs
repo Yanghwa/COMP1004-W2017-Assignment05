@@ -1,4 +1,14 @@
-﻿using System;
+﻿//FileName: SharpAutoForm.cs
+//FileType: Visual C# Source file
+//Author: Junghwan Yang
+//Created On: 30/01/2017
+//Copy Rights: Junghwan Yang
+//Description: This application calculates total Amount Due depening on auto price, additional options, and tax.
+//            It also has menu bar to use it easy and extra options like font, color, and about.
+
+/////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +51,7 @@ namespace SharpAutoForm
         }
 
         // PRIVATE METHODS +++++++++++++++++++++++++++++++++
+        // EVENT HANDLERS -----------------------------------------
         /// <summary>
         /// Event handler for clicking buttons or menus in the file menu bar
         /// </summary>
@@ -78,7 +89,7 @@ namespace SharpAutoForm
         }
 
         /// <summary>
-        /// 
+        /// Event handler to open font style changing option when font menu in menu bar is clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -91,7 +102,7 @@ namespace SharpAutoForm
         }
 
         /// <summary>
-        /// 
+        /// Event handler to open font color changing option when color menu in menu bar is clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -104,7 +115,17 @@ namespace SharpAutoForm
         }
 
         /// <summary>
-        /// 
+        /// Eent handler to close application when exit menu in menu bar is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void _exitMenuToolStrip_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// Event handler to ask confirming users really want to close this application
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -122,18 +143,9 @@ namespace SharpAutoForm
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void _exitMenuToolStrip_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         /// <summary>
-        /// 
+        /// Event handler to decide additional item value depending on which check button is checked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -177,7 +189,7 @@ namespace SharpAutoForm
         }
 
         /// <summary>
-        /// 
+        /// Event handler to decide exterior value depending on which radio button is clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -203,7 +215,7 @@ namespace SharpAutoForm
         }
 
         /// <summary>
-        /// 
+        /// Event handler to validate input value is only numbers with one dot 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -223,7 +235,7 @@ namespace SharpAutoForm
         }
         
         /// <summary>
-        /// 
+        /// Event handler to detect base price value is 0 or empty when leave from textbox 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -240,7 +252,7 @@ namespace SharpAutoForm
         }
 
         /// <summary>
-        /// 
+        /// Event handler to detect trade-in-allowance value is 0 or empty when leave from textbox 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -257,29 +269,7 @@ namespace SharpAutoForm
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        private void _initializeVariablesOptions()
-        {
-            decimal _basePrice = decimal.Parse("0");
-            decimal _additionalOptions = decimal.Parse("0");
-            decimal _exteriorOptions = decimal.Parse("0");
-            decimal _salesTax = decimal.Parse("0");
-            decimal _tradeInAllowance = decimal.Parse("0");
-            decimal _subTotal = decimal.Parse("0");
-            BasePriceText.Text = "";
-            AdditionalOptionsText.Text = "";
-            SubTotalText.Text = "";
-            SalesTaxText.Text = "";
-            TotalText.Text = "";
-            TradeAllowanceText.Text = "0";
-            AmountDueText.Text = "";
-            StandardRadio.Checked = true;
-            StereoSystemCheck.Checked = LeatherInteriorCheck.Checked = ComputerNavigationCheck.Checked = false;
-        }
-
-        /// <summary>
-        /// 
+        /// Event handler to detect base price value is 0 when enter to textbox 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -296,7 +286,7 @@ namespace SharpAutoForm
         }
 
         /// <summary>
-        /// 
+        /// Event handler to detect trade-in-allowance value is 0 when enter to textbox 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -312,7 +302,7 @@ namespace SharpAutoForm
         }
 
         /// <summary>
-        /// 
+        /// Event handler when click clear menu in the menu bar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -322,7 +312,7 @@ namespace SharpAutoForm
         }
 
         /// <summary>
-        /// 
+        /// Event handler when click calculate menu in the menu bar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -343,5 +333,29 @@ namespace SharpAutoForm
                 AdditionalOptionsText.Text = _currency + string.Format("{0:#,##0.00}", 0);
             }
         }
+
+        //PRIVATE METHOD - NOT EVENT HANDLER ++++++++++++++++++++++++++++++
+        /// <summary>
+        /// this method initializes all variables and texts
+        /// </summary>
+        private void _initializeVariablesOptions()
+        {
+            decimal _basePrice = decimal.Parse("0");
+            decimal _additionalOptions = decimal.Parse("0");
+            decimal _exteriorOptions = decimal.Parse("0");
+            decimal _salesTax = decimal.Parse("0");
+            decimal _tradeInAllowance = decimal.Parse("0");
+            decimal _subTotal = decimal.Parse("0");
+            BasePriceText.Text = "";
+            AdditionalOptionsText.Text = "";
+            SubTotalText.Text = "";
+            SalesTaxText.Text = "";
+            TotalText.Text = "";
+            TradeAllowanceText.Text = "0";
+            AmountDueText.Text = "";
+            StandardRadio.Checked = true;
+            StereoSystemCheck.Checked = LeatherInteriorCheck.Checked = ComputerNavigationCheck.Checked = false;
+        }
+
     }
 }
