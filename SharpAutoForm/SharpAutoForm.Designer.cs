@@ -80,16 +80,14 @@
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.cutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pasteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.selectAllToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.CalculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SharpAutoFontDialog = new System.Windows.Forms.FontDialog();
+            this.SharpAutoColorDialog = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.AdditionalItemsBox.SuspendLayout();
             this.ExteriorFinishBox.SuspendLayout();
@@ -126,13 +124,13 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 318);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(439, 433);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // AmountDueText
             // 
             this.AmountDueText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AmountDueText.Location = new System.Drawing.Point(223, 279);
+            this.AmountDueText.Location = new System.Drawing.Point(252, 384);
             this.AmountDueText.Name = "AmountDueText";
             this.AmountDueText.ReadOnly = true;
             this.AmountDueText.Size = new System.Drawing.Size(157, 30);
@@ -142,7 +140,7 @@
             // TradeAllowanceText
             // 
             this.TradeAllowanceText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TradeAllowanceText.Location = new System.Drawing.Point(223, 232);
+            this.TradeAllowanceText.Location = new System.Drawing.Point(252, 320);
             this.TradeAllowanceText.Name = "TradeAllowanceText";
             this.TradeAllowanceText.Size = new System.Drawing.Size(157, 30);
             this.TradeAllowanceText.TabIndex = 12;
@@ -152,7 +150,7 @@
             // TotalText
             // 
             this.TotalText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TotalText.Location = new System.Drawing.Point(223, 187);
+            this.TotalText.Location = new System.Drawing.Point(252, 259);
             this.TotalText.Name = "TotalText";
             this.TotalText.ReadOnly = true;
             this.TotalText.Size = new System.Drawing.Size(157, 30);
@@ -162,7 +160,7 @@
             // SalesTaxText
             // 
             this.SalesTaxText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SalesTaxText.Location = new System.Drawing.Point(223, 142);
+            this.SalesTaxText.Location = new System.Drawing.Point(252, 198);
             this.SalesTaxText.Name = "SalesTaxText";
             this.SalesTaxText.ReadOnly = true;
             this.SalesTaxText.Size = new System.Drawing.Size(157, 30);
@@ -172,7 +170,7 @@
             // SubTotalText
             // 
             this.SubTotalText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SubTotalText.Location = new System.Drawing.Point(223, 97);
+            this.SubTotalText.Location = new System.Drawing.Point(252, 137);
             this.SubTotalText.Name = "SubTotalText";
             this.SubTotalText.ReadOnly = true;
             this.SubTotalText.Size = new System.Drawing.Size(157, 30);
@@ -182,8 +180,9 @@
             // AdditionalOptionsText
             // 
             this.AdditionalOptionsText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AdditionalOptionsText.Location = new System.Drawing.Point(223, 52);
+            this.AdditionalOptionsText.Location = new System.Drawing.Point(252, 76);
             this.AdditionalOptionsText.Name = "AdditionalOptionsText";
+            this.AdditionalOptionsText.ReadOnly = true;
             this.AdditionalOptionsText.Size = new System.Drawing.Size(157, 30);
             this.AdditionalOptionsText.TabIndex = 8;
             this.AdditionalOptionsText.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -192,7 +191,7 @@
             // 
             this.BasePriceLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.BasePriceLabel.AutoSize = true;
-            this.BasePriceLabel.Location = new System.Drawing.Point(84, 10);
+            this.BasePriceLabel.Location = new System.Drawing.Point(103, 18);
             this.BasePriceLabel.Name = "BasePriceLabel";
             this.BasePriceLabel.Size = new System.Drawing.Size(117, 25);
             this.BasePriceLabel.TabIndex = 0;
@@ -203,7 +202,7 @@
             // 
             this.AdditionalOptionsLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.AdditionalOptionsLabel.AutoSize = true;
-            this.AdditionalOptionsLabel.Location = new System.Drawing.Point(19, 55);
+            this.AdditionalOptionsLabel.Location = new System.Drawing.Point(38, 79);
             this.AdditionalOptionsLabel.Name = "AdditionalOptionsLabel";
             this.AdditionalOptionsLabel.Size = new System.Drawing.Size(182, 25);
             this.AdditionalOptionsLabel.TabIndex = 1;
@@ -214,7 +213,7 @@
             // 
             this.SubTotalLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.SubTotalLabel.AutoSize = true;
-            this.SubTotalLabel.Location = new System.Drawing.Point(98, 100);
+            this.SubTotalLabel.Location = new System.Drawing.Point(117, 140);
             this.SubTotalLabel.Name = "SubTotalLabel";
             this.SubTotalLabel.Size = new System.Drawing.Size(103, 25);
             this.SubTotalLabel.TabIndex = 2;
@@ -225,7 +224,7 @@
             // 
             this.SalesTaxLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.SalesTaxLabel.AutoSize = true;
-            this.SalesTaxLabel.Location = new System.Drawing.Point(30, 145);
+            this.SalesTaxLabel.Location = new System.Drawing.Point(49, 201);
             this.SalesTaxLabel.Name = "SalesTaxLabel";
             this.SalesTaxLabel.Size = new System.Drawing.Size(171, 25);
             this.SalesTaxLabel.TabIndex = 3;
@@ -236,7 +235,7 @@
             // 
             this.TotalLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TotalLabel.AutoSize = true;
-            this.TotalLabel.Location = new System.Drawing.Point(134, 190);
+            this.TotalLabel.Location = new System.Drawing.Point(153, 262);
             this.TotalLabel.Name = "TotalLabel";
             this.TotalLabel.Size = new System.Drawing.Size(67, 25);
             this.TotalLabel.TabIndex = 4;
@@ -247,7 +246,7 @@
             // 
             this.TradeAllowanceLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.TradeAllowanceLabel.AutoSize = true;
-            this.TradeAllowanceLabel.Location = new System.Drawing.Point(9, 235);
+            this.TradeAllowanceLabel.Location = new System.Drawing.Point(28, 323);
             this.TradeAllowanceLabel.Name = "TradeAllowanceLabel";
             this.TradeAllowanceLabel.Size = new System.Drawing.Size(192, 25);
             this.TradeAllowanceLabel.TabIndex = 5;
@@ -258,7 +257,7 @@
             // 
             this.AmountDueLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.AmountDueLabel.AutoSize = true;
-            this.AmountDueLabel.Location = new System.Drawing.Point(69, 281);
+            this.AmountDueLabel.Location = new System.Drawing.Point(88, 387);
             this.AmountDueLabel.Name = "AmountDueLabel";
             this.AmountDueLabel.Size = new System.Drawing.Size(132, 25);
             this.AmountDueLabel.TabIndex = 6;
@@ -268,7 +267,8 @@
             // BasePriceText
             // 
             this.BasePriceText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BasePriceText.Location = new System.Drawing.Point(223, 7);
+            this.BasePriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BasePriceText.Location = new System.Drawing.Point(252, 15);
             this.BasePriceText.Name = "BasePriceText";
             this.BasePriceText.Size = new System.Drawing.Size(157, 30);
             this.BasePriceText.TabIndex = 7;
@@ -279,7 +279,7 @@
             this.AdditionalItemsBox.Controls.Add(this.ComputerNavigationCheck);
             this.AdditionalItemsBox.Controls.Add(this.LeatherInteriorCheck);
             this.AdditionalItemsBox.Controls.Add(this.StereoSystemCheck);
-            this.AdditionalItemsBox.Location = new System.Drawing.Point(471, 58);
+            this.AdditionalItemsBox.Location = new System.Drawing.Point(514, 58);
             this.AdditionalItemsBox.Name = "AdditionalItemsBox";
             this.AdditionalItemsBox.Size = new System.Drawing.Size(234, 127);
             this.AdditionalItemsBox.TabIndex = 1;
@@ -293,8 +293,10 @@
             this.ComputerNavigationCheck.Name = "ComputerNavigationCheck";
             this.ComputerNavigationCheck.Size = new System.Drawing.Size(183, 24);
             this.ComputerNavigationCheck.TabIndex = 2;
+            this.ComputerNavigationCheck.Tag = "ComputerNavigation";
             this.ComputerNavigationCheck.Text = "Computer Navigation";
             this.ComputerNavigationCheck.UseVisualStyleBackColor = true;
+            this.ComputerNavigationCheck.CheckedChanged += new System.EventHandler(this._additionalItems_CheckedChanged);
             // 
             // LeatherInteriorCheck
             // 
@@ -303,8 +305,10 @@
             this.LeatherInteriorCheck.Name = "LeatherInteriorCheck";
             this.LeatherInteriorCheck.Size = new System.Drawing.Size(144, 24);
             this.LeatherInteriorCheck.TabIndex = 1;
+            this.LeatherInteriorCheck.Tag = "LeatherInterior";
             this.LeatherInteriorCheck.Text = "Leather Interior";
             this.LeatherInteriorCheck.UseVisualStyleBackColor = true;
+            this.LeatherInteriorCheck.CheckedChanged += new System.EventHandler(this._additionalItems_CheckedChanged);
             // 
             // StereoSystemCheck
             // 
@@ -313,15 +317,17 @@
             this.StereoSystemCheck.Name = "StereoSystemCheck";
             this.StereoSystemCheck.Size = new System.Drawing.Size(140, 24);
             this.StereoSystemCheck.TabIndex = 0;
+            this.StereoSystemCheck.Tag = "StereoSystem";
             this.StereoSystemCheck.Text = "Stereo System";
             this.StereoSystemCheck.UseVisualStyleBackColor = true;
+            this.StereoSystemCheck.CheckedChanged += new System.EventHandler(this._additionalItems_CheckedChanged);
             // 
             // ExteriorFinishBox
             // 
             this.ExteriorFinishBox.Controls.Add(this.CustomizedDetailingRadio);
             this.ExteriorFinishBox.Controls.Add(this.PearlizedRadio);
             this.ExteriorFinishBox.Controls.Add(this.StandardRadio);
-            this.ExteriorFinishBox.Location = new System.Drawing.Point(471, 249);
+            this.ExteriorFinishBox.Location = new System.Drawing.Point(514, 256);
             this.ExteriorFinishBox.Name = "ExteriorFinishBox";
             this.ExteriorFinishBox.Size = new System.Drawing.Size(234, 127);
             this.ExteriorFinishBox.TabIndex = 3;
@@ -335,8 +341,10 @@
             this.CustomizedDetailingRadio.Name = "CustomizedDetailingRadio";
             this.CustomizedDetailingRadio.Size = new System.Drawing.Size(184, 24);
             this.CustomizedDetailingRadio.TabIndex = 2;
+            this.CustomizedDetailingRadio.Tag = "CustomizedDetailing";
             this.CustomizedDetailingRadio.Text = "Customized Detailing";
             this.CustomizedDetailingRadio.UseVisualStyleBackColor = true;
+            this.CustomizedDetailingRadio.CheckedChanged += new System.EventHandler(this._exteriorOptionsRadio_Click);
             // 
             // PearlizedRadio
             // 
@@ -345,8 +353,10 @@
             this.PearlizedRadio.Name = "PearlizedRadio";
             this.PearlizedRadio.Size = new System.Drawing.Size(99, 24);
             this.PearlizedRadio.TabIndex = 1;
+            this.PearlizedRadio.Tag = "Pearlized";
             this.PearlizedRadio.Text = "Pearlized";
             this.PearlizedRadio.UseVisualStyleBackColor = true;
+            this.PearlizedRadio.CheckedChanged += new System.EventHandler(this._exteriorOptionsRadio_Click);
             // 
             // StandardRadio
             // 
@@ -357,38 +367,46 @@
             this.StandardRadio.Size = new System.Drawing.Size(100, 24);
             this.StandardRadio.TabIndex = 0;
             this.StandardRadio.TabStop = true;
+            this.StandardRadio.Tag = "Standard";
             this.StandardRadio.Text = "Standard";
             this.StandardRadio.UseVisualStyleBackColor = true;
+            this.StandardRadio.CheckedChanged += new System.EventHandler(this._exteriorOptionsRadio_Click);
             // 
             // CalculateButton
             // 
             this.CalculateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.CalculateButton.Location = new System.Drawing.Point(23, 424);
+            this.CalculateButton.Location = new System.Drawing.Point(23, 497);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(169, 49);
             this.CalculateButton.TabIndex = 4;
+            this.CalculateButton.Tag = "Calculate";
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
+            this.CalculateButton.Click += new System.EventHandler(this._eventsButton_Click);
             // 
             // ClearButton
             // 
             this.ClearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ClearButton.Location = new System.Drawing.Point(294, 424);
+            this.ClearButton.Location = new System.Drawing.Point(294, 497);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(169, 49);
             this.ClearButton.TabIndex = 5;
+            this.ClearButton.Tag = "Clear";
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this._eventsButton_Click);
             // 
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.ExitButton.Location = new System.Drawing.Point(579, 424);
+            this.ExitButton.Location = new System.Drawing.Point(579, 497);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(169, 49);
             this.ExitButton.TabIndex = 6;
+            this.ExitButton.Tag = "Exit";
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this._eventsButton_Click);
             // 
             // fileToolStripMenuItem
             // 
@@ -536,115 +554,97 @@
             this.AutoCenterMenuStrip.Name = "AutoCenterMenuStrip";
             this.AutoCenterMenuStrip.Size = new System.Drawing.Size(778, 36);
             this.AutoCenterMenuStrip.TabIndex = 9;
-            this.AutoCenterMenuStrip.Text = "menuStrip1";
+            this.AutoCenterMenuStrip.Text = "MenuStrip";
             // 
             // fileToolStripMenuItem1
             // 
             this.fileToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem1});
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
+            this.fileToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F)));
             this.fileToolStripMenuItem1.Size = new System.Drawing.Size(54, 32);
             this.fileToolStripMenuItem1.Text = "&File";
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(211, 32);
+            this.exitToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.X)));
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(191, 32);
+            this.exitToolStripMenuItem1.Tag = "Exit";
             this.exitToolStripMenuItem1.Text = "E&xit";
-            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this._exitSharpAutoForm_Click);
             // 
             // editToolStripMenuItem1
             // 
             this.editToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem1,
-            this.redoToolStripMenuItem1,
-            this.toolStripSeparator5,
-            this.cutToolStripMenuItem1,
-            this.copyToolStripMenuItem1,
-            this.pasteToolStripMenuItem1,
-            this.toolStripSeparator6,
-            this.selectAllToolStripMenuItem1});
+            this.CalculateToolStripMenuItem,
+            this.ClearToolStripMenuItem,
+            this.FontToolStripMenuItem,
+            this.ColorToolStripMenuItem});
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.E)));
             this.editToolStripMenuItem1.Size = new System.Drawing.Size(58, 32);
             this.editToolStripMenuItem1.Text = "&Edit";
             // 
-            // undoToolStripMenuItem1
+            // CalculateToolStripMenuItem
             // 
-            this.undoToolStripMenuItem1.Name = "undoToolStripMenuItem1";
-            this.undoToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem1.Size = new System.Drawing.Size(214, 32);
-            this.undoToolStripMenuItem1.Text = "&Undo";
+            this.CalculateToolStripMenuItem.Name = "CalculateToolStripMenuItem";
+            this.CalculateToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this.CalculateToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.CalculateToolStripMenuItem.Text = "&Calculate";
             // 
-            // redoToolStripMenuItem1
+            // ClearToolStripMenuItem
             // 
-            this.redoToolStripMenuItem1.Name = "redoToolStripMenuItem1";
-            this.redoToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem1.Size = new System.Drawing.Size(214, 32);
-            this.redoToolStripMenuItem1.Text = "&Redo";
+            this.ClearToolStripMenuItem.Name = "ClearToolStripMenuItem";
+            this.ClearToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.C)));
+            this.ClearToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.ClearToolStripMenuItem.Text = "&Clear";
             // 
-            // toolStripSeparator5
+            // FontToolStripMenuItem
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(211, 6);
+            this.FontToolStripMenuItem.Name = "FontToolStripMenuItem";
+            this.FontToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.F)));
+            this.FontToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.FontToolStripMenuItem.Text = "&Font";
+            this.FontToolStripMenuItem.Click += new System.EventHandler(this._fontOptionEditMenu_Click);
             // 
-            // cutToolStripMenuItem1
+            // ColorToolStripMenuItem
             // 
-            this.cutToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("cutToolStripMenuItem1.Image")));
-            this.cutToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.cutToolStripMenuItem1.Name = "cutToolStripMenuItem1";
-            this.cutToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem1.Size = new System.Drawing.Size(214, 32);
-            this.cutToolStripMenuItem1.Text = "Cu&t";
-            // 
-            // copyToolStripMenuItem1
-            // 
-            this.copyToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("copyToolStripMenuItem1.Image")));
-            this.copyToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.copyToolStripMenuItem1.Name = "copyToolStripMenuItem1";
-            this.copyToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem1.Size = new System.Drawing.Size(214, 32);
-            this.copyToolStripMenuItem1.Text = "&Copy";
-            // 
-            // pasteToolStripMenuItem1
-            // 
-            this.pasteToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("pasteToolStripMenuItem1.Image")));
-            this.pasteToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pasteToolStripMenuItem1.Name = "pasteToolStripMenuItem1";
-            this.pasteToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem1.Size = new System.Drawing.Size(214, 32);
-            this.pasteToolStripMenuItem1.Text = "&Paste";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(211, 6);
-            // 
-            // selectAllToolStripMenuItem1
-            // 
-            this.selectAllToolStripMenuItem1.Name = "selectAllToolStripMenuItem1";
-            this.selectAllToolStripMenuItem1.Size = new System.Drawing.Size(214, 32);
-            this.selectAllToolStripMenuItem1.Text = "Select &All";
+            this.ColorToolStripMenuItem.Name = "ColorToolStripMenuItem";
+            this.ColorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
+            this.ColorToolStripMenuItem.Size = new System.Drawing.Size(249, 32);
+            this.ColorToolStripMenuItem.Text = "C&olor";
+            this.ColorToolStripMenuItem.Click += new System.EventHandler(this._colorOptionEditMenu_Click);
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem2});
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.H)));
             this.helpToolStripMenuItem1.Size = new System.Drawing.Size(65, 32);
             this.helpToolStripMenuItem1.Text = "&Help";
             // 
             // aboutToolStripMenuItem2
             // 
             this.aboutToolStripMenuItem2.Name = "aboutToolStripMenuItem2";
-            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(211, 32);
+            this.aboutToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
+            this.aboutToolStripMenuItem2.Size = new System.Drawing.Size(228, 32);
             this.aboutToolStripMenuItem2.Text = "&About...";
-            this.aboutToolStripMenuItem2.Click += new System.EventHandler(this.aboutToolStripMenuItem2_Click);
+            this.aboutToolStripMenuItem2.Click += new System.EventHandler(this._aboutOptionHelpMenu_Click);
+            // 
+            // SharpAutoFontDialog
+            // 
+            this.SharpAutoFontDialog.MaxSize = 20;
+            this.SharpAutoFontDialog.MinSize = 7;
             // 
             // SharpAutoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 495);
+            this.ClientSize = new System.Drawing.Size(778, 569);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.CalculateButton);
@@ -656,6 +656,7 @@
             this.MainMenuStrip = this.AutoCenterMenuStrip;
             this.Name = "SharpAutoForm";
             this.Text = "Sharp Auto Calculator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._sharpAutoForm_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.AdditionalItemsBox.ResumeLayout(false);
@@ -722,16 +723,14 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem FontToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CalculateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ClearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ColorToolStripMenuItem;
+        private System.Windows.Forms.FontDialog SharpAutoFontDialog;
+        private System.Windows.Forms.ColorDialog SharpAutoColorDialog;
     }
 }
 

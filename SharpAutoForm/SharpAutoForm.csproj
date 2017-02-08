@@ -85,6 +85,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SharpAutoClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -94,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\temp_logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16ab8b419562ddb7470b00a4dd9d8502.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -27,7 +27,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBoxForm));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.labelProductName = new System.Windows.Forms.Label();
@@ -69,7 +68,7 @@
             // logoPictureBox
             // 
             this.logoPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logoPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logoPictureBox.Image")));
+            this.logoPictureBox.Image = global::SharpAutoForm.Properties.Resources.about;
             this.logoPictureBox.Location = new System.Drawing.Point(4, 5);
             this.logoPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.logoPictureBox.Name = "logoPictureBox";
