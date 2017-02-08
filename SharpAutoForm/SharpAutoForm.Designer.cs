@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SharpAutoForm));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.InputTableAuto = new System.Windows.Forms.TableLayoutPanel();
             this.AmountDueText = new System.Windows.Forms.TextBox();
             this.TradeAllowanceText = new System.Windows.Forms.TextBox();
             this.TotalText = new System.Windows.Forms.TextBox();
@@ -88,44 +88,44 @@
             this.aboutToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.SharpAutoFontDialog = new System.Windows.Forms.FontDialog();
             this.SharpAutoColorDialog = new System.Windows.Forms.ColorDialog();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.InputTableAuto.SuspendLayout();
             this.AdditionalItemsBox.SuspendLayout();
             this.ExteriorFinishBox.SuspendLayout();
             this.AutoCenterMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // InputTableAuto
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.26556F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.73444F));
-            this.tableLayoutPanel1.Controls.Add(this.AmountDueText, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.TradeAllowanceText, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.TotalText, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.SalesTaxText, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.SubTotalText, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.AdditionalOptionsText, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.BasePriceLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.AdditionalOptionsLabel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.SubTotalLabel, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.SalesTaxLabel, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.TotalLabel, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.TradeAllowanceLabel, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.AmountDueLabel, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.BasePriceText, 1, 0);
-            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(26, 44);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(487, 484);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.InputTableAuto.ColumnCount = 2;
+            this.InputTableAuto.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.26556F));
+            this.InputTableAuto.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.73444F));
+            this.InputTableAuto.Controls.Add(this.AmountDueText, 1, 6);
+            this.InputTableAuto.Controls.Add(this.TradeAllowanceText, 1, 5);
+            this.InputTableAuto.Controls.Add(this.TotalText, 1, 4);
+            this.InputTableAuto.Controls.Add(this.SalesTaxText, 1, 3);
+            this.InputTableAuto.Controls.Add(this.SubTotalText, 1, 2);
+            this.InputTableAuto.Controls.Add(this.AdditionalOptionsText, 1, 1);
+            this.InputTableAuto.Controls.Add(this.BasePriceLabel, 0, 0);
+            this.InputTableAuto.Controls.Add(this.AdditionalOptionsLabel, 0, 1);
+            this.InputTableAuto.Controls.Add(this.SubTotalLabel, 0, 2);
+            this.InputTableAuto.Controls.Add(this.SalesTaxLabel, 0, 3);
+            this.InputTableAuto.Controls.Add(this.TotalLabel, 0, 4);
+            this.InputTableAuto.Controls.Add(this.TradeAllowanceLabel, 0, 5);
+            this.InputTableAuto.Controls.Add(this.AmountDueLabel, 0, 6);
+            this.InputTableAuto.Controls.Add(this.BasePriceText, 1, 0);
+            this.InputTableAuto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputTableAuto.Location = new System.Drawing.Point(26, 44);
+            this.InputTableAuto.Name = "InputTableAuto";
+            this.InputTableAuto.RowCount = 7;
+            this.InputTableAuto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.InputTableAuto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.InputTableAuto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.InputTableAuto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.InputTableAuto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.InputTableAuto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.InputTableAuto.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
+            this.InputTableAuto.Size = new System.Drawing.Size(487, 484);
+            this.InputTableAuto.TabIndex = 0;
             // 
             // AmountDueText
             // 
@@ -142,6 +142,7 @@
             // 
             this.TradeAllowanceText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TradeAllowanceText.Location = new System.Drawing.Point(277, 364);
+            this.TradeAllowanceText.MaxLength = 20;
             this.TradeAllowanceText.Name = "TradeAllowanceText";
             this.TradeAllowanceText.Size = new System.Drawing.Size(157, 30);
             this.TradeAllowanceText.TabIndex = 8;
@@ -277,6 +278,7 @@
             this.BasePriceText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BasePriceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.BasePriceText.Location = new System.Drawing.Point(277, 19);
+            this.BasePriceText.MaxLength = 20;
             this.BasePriceText.Name = "BasePriceText";
             this.BasePriceText.Size = new System.Drawing.Size(157, 30);
             this.BasePriceText.TabIndex = 1;
@@ -669,16 +671,18 @@
             this.Controls.Add(this.CalculateButton);
             this.Controls.Add(this.ExteriorFinishBox);
             this.Controls.Add(this.AdditionalItemsBox);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.InputTableAuto);
             this.Controls.Add(this.AutoCenterMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.AutoCenterMenuStrip;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SharpAutoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sharp Auto Calculator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this._sharpAutoForm_FormClosing);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.InputTableAuto.ResumeLayout(false);
+            this.InputTableAuto.PerformLayout();
             this.AdditionalItemsBox.ResumeLayout(false);
             this.AdditionalItemsBox.PerformLayout();
             this.ExteriorFinishBox.ResumeLayout(false);
@@ -692,7 +696,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel InputTableAuto;
         private System.Windows.Forms.TextBox AmountDueText;
         private System.Windows.Forms.TextBox TradeAllowanceText;
         private System.Windows.Forms.TextBox TotalText;

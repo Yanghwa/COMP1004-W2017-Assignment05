@@ -40,7 +40,7 @@
             this.NowLoading.Image = global::SharpAutoForm.Properties.Resources.loading;
             this.NowLoading.Location = new System.Drawing.Point(0, 0);
             this.NowLoading.Name = "NowLoading";
-            this.NowLoading.Size = new System.Drawing.Size(278, 244);
+            this.NowLoading.Size = new System.Drawing.Size(300, 200);
             this.NowLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.NowLoading.TabIndex = 0;
             this.NowLoading.TabStop = false;
@@ -55,7 +55,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.ClientSize = new System.Drawing.Size(300, 200);
             this.Controls.Add(this.NowLoading);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;

@@ -110,7 +110,9 @@ namespace SharpAutoForm
         {
             if(SharpAutoColorDialog.ShowDialog() == DialogResult.OK)
             {
-                BasePriceText.ForeColor = AmountDueText.ForeColor = SharpAutoColorDialog.Color;
+                BasePriceText.ForeColor = SharpAutoColorDialog.Color;
+                AmountDueText.BackColor = AmountDueText.BackColor;
+                AmountDueText.ForeColor = SharpAutoColorDialog.Color;
             }
         }
 
@@ -195,7 +197,6 @@ namespace SharpAutoForm
         /// <param name="e"></param>
         private void _exteriorOptionsRadio_Click(object sender, EventArgs e)
         {
-            
             RadioButton ExteriorOption = sender as RadioButton;
             switch(ExteriorOption.Tag.ToString()) {
                 case "Standard":
@@ -245,6 +246,7 @@ namespace SharpAutoForm
                 _basePrice = decimal.Parse("0");
             } else
             {
+                BasePriceText.Text = Regex.Replace(BasePriceText.Text, @"[^-?\d+\.]", "");
                 _basePrice = decimal.Parse(BasePriceText.Text);
             }
             
@@ -263,6 +265,7 @@ namespace SharpAutoForm
                 _tradeInAllowance = decimal.Parse("0");
             } else
             {
+                TradeAllowanceText.Text = Regex.Replace(TradeAllowanceText.Text, @"[^-?\d+\.]", "");
                 _tradeInAllowance = decimal.Parse(TradeAllowanceText.Text);
             }
             TradeAllowanceText.Text = _currency + string.Format("{0:#,##0.00}", _tradeInAllowance);
@@ -318,6 +321,8 @@ namespace SharpAutoForm
         /// <param name="e"></param>
         private void _calculateMenuToolStrip_Click(object sender, EventArgs e)
         {
+            _basePriceText_Leave(sender, e);
+            _tradeAllowanceText_Leave(sender, e);
             LoadingForm Nowloading = new LoadingForm();
             Nowloading.ShowDialog(this);
             _subTotal = _basePrice + _additionalOptions + _exteriorOptions;
