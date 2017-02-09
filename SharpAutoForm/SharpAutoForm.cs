@@ -57,19 +57,19 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _eventsButton_Click(object sender, EventArgs e)
+        private void _clickEventsButtons(object sender, EventArgs e)
         {
             Button ClickedButton = sender as Button;
             switch (ClickedButton.Tag.ToString())
             {
                 case "Calculate":
-                    _calculateMenuToolStrip_Click(sender, e);
+                    _clickCalculateMenuToolStrip(sender, e);
                     break;
                 case "Clear":
                     _initializeVariablesOptions();
                     break;
                 case "Exit":
-                    _exitMenuToolStrip_Click(sender, e);
+                    _clickExitMenuToolStrip(sender, e);
                     break;
                 default:
                     break;
@@ -81,7 +81,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _aboutOptionHelpMenu_Click(object sender, EventArgs e)
+        private void _clickAboutOptionHelpMenu(object sender, EventArgs e)
         {
             AboutBoxForm aboutForm = new AboutBoxForm();
             //modal method to display the form
@@ -93,7 +93,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _fontOptionEditMenu_Click(object sender, EventArgs e)
+        private void _clickFontOptionEditMenu(object sender, EventArgs e)
         {
             if (SharpAutoFontDialog.ShowDialog() == DialogResult.OK)
             {
@@ -106,7 +106,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _colorOptionEditMenu_Click(object sender, EventArgs e)
+        private void _clickColorOptionEditMenu(object sender, EventArgs e)
         {
             if(SharpAutoColorDialog.ShowDialog() == DialogResult.OK)
             {
@@ -121,7 +121,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _exitMenuToolStrip_Click(object sender, EventArgs e)
+        private void _clickExitMenuToolStrip(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -131,7 +131,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _sharpAutoForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void _formClosingSharpAutoForm(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("If you want to close, push OK button.", "Warning",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
@@ -151,7 +151,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _additionalItems_CheckedChanged(object sender, EventArgs e)
+        private void _checkChangedAdditionalItems(object sender, EventArgs e)
         {
             CheckBox ClickedCheckButton = sender as CheckBox;
             switch (ClickedCheckButton.Tag.ToString())
@@ -195,7 +195,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _exteriorOptionsRadio_Click(object sender, EventArgs e)
+        private void _clickExteriorOptionsRadio(object sender, EventArgs e)
         {
             RadioButton ExteriorOption = sender as RadioButton;
             switch(ExteriorOption.Tag.ToString()) {
@@ -240,7 +240,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _basePriceText_Leave(object sender, EventArgs e)
+        private void _leaveBasePriceText(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(BasePriceText.Text)) {
                 _basePrice = decimal.Parse("0");
@@ -258,7 +258,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _tradeAllowanceText_Leave(object sender, EventArgs e)
+        private void _leaveTradeAllowanceText(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TradeAllowanceText.Text))
             {
@@ -276,7 +276,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _basePriceTextIsZero_Enter(object sender, EventArgs e)
+        private void _enterBasePriceText(object sender, EventArgs e)
         {
             if(_basePrice.Equals(0))
             {
@@ -293,7 +293,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _tradeInAllowanceTextIsZero_Enter(object sender, EventArgs e)
+        private void _enterTradeInAllowanceText(object sender, EventArgs e)
         {
             if (_tradeInAllowance.Equals(0))
             {
@@ -309,7 +309,7 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _clearMenuToolStrip_Click(object sender, EventArgs e)
+        private void _clickClearMenuToolStrip(object sender, EventArgs e)
         {
             _initializeVariablesOptions();
         }
@@ -319,10 +319,10 @@ namespace SharpAutoForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void _calculateMenuToolStrip_Click(object sender, EventArgs e)
+        private void _clickCalculateMenuToolStrip(object sender, EventArgs e)
         {
-            _basePriceText_Leave(sender, e);
-            _tradeAllowanceText_Leave(sender, e);
+            _leaveBasePriceText(sender, e);
+            _leaveTradeAllowanceText(sender, e);
             LoadingForm Nowloading = new LoadingForm();
             Nowloading.ShowDialog(this);
             _subTotal = _basePrice + _additionalOptions + _exteriorOptions;
