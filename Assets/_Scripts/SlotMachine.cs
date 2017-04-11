@@ -3,12 +3,22 @@ using System.Collections;
 
 public class SlotMachine : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+    public float period = 0.0f;
+
+    // Use this for initialization
+    void Start () {
+        resetAll();
 	}
-	
-	private int playerMoney = 1000;
+
+    // Update is called once per frame
+    void Update()
+    {
+        _changeInfoText();
+        
+    }
+
+
+    private int playerMoney = 1000;
 	private int winnings = 0;
 	private int jackpot = 5000;
 	private float turn = 0.0f;
@@ -241,7 +251,7 @@ public class SlotMachine : MonoBehaviour {
 
 	public void OnSpinButtonClick()
 	{
-		playerBet = 10; // default bet amount
+		//playerBet = 10; // default bet amount
 
 		if (playerMoney == 0)
 		{
@@ -257,7 +267,7 @@ public class SlotMachine : MonoBehaviour {
 		{
 			Debug.Log("You don't have enough Money to place that bet.");
 		}
-		else if (playerBet < 0)
+		else if (playerBet <= 0)
 		{
 			Debug.Log("All bets must be a positive $ amount.");
 		}
@@ -274,9 +284,73 @@ public class SlotMachine : MonoBehaviour {
 		{
 			Debug.Log("Please enter a valid bet amount");
 		}
-	}
+        playerBet = 0;
+        showAllMoney();
+    }
     public void resetStat()
     {
         this.resetAll();
+        showAllMoney();
+    }
+
+    public void closeButton()
+    {
+        Debug.Log("Close the application");
+        Application.Quit();
+    }
+    /// <summary>
+    /// This method changes infoText to hook users
+    /// </summary>
+    private void _changeInfoText()
+    {
+        if (period > 4)
+        {
+            GameObject.Find("infoText").GetComponent<UnityEngine.UI.Text>().text = "Challenge Now!";
+            //Debug.Log("1st try");
+            period = 0;
+        }
+        if (period > 2)
+        {
+            GameObject.Find("infoText").GetComponent<UnityEngine.UI.Text>().text = "Chance to Win!";
+            //Debug.Log("2nd try");
+        }
+        period += UnityEngine.Time.deltaTime;
+    }
+
+    private void showAllMoney()
+    {
+        GameObject.Find("betText").GetComponent<UnityEngine.UI.Text>().text = playerBet.ToString();
+        GameObject.Find("totalCreditsText").GetComponent<UnityEngine.UI.Text>().text = playerMoney.ToString();
+        GameObject.Find("winnerPaidText").GetComponent<UnityEngine.UI.Text>().text = winnings.ToString();
+    }
+
+    public void betPlayerBetOne()
+    {
+        playerBet += 1;
+        showAllMoney();
+    }
+
+    public void betPlayerBetTen()
+    {
+        playerBet += 10;
+        showAllMoney();
+    }
+
+    public void betPlayerBetTwentyfive()
+    {
+        playerBet += 25;
+        showAllMoney();
+    }
+
+    public void betPlayerBetHundred()
+    {
+        playerBet += 100;
+        showAllMoney();
+    }
+
+    public void betPlayerBetFivehundred()
+    {
+        playerBet += 500;
+        showAllMoney();
     }
 }

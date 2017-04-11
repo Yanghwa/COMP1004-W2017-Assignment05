@@ -1,0 +1,281 @@
+Initialize engine version: 5.5.1f1 (88d00a7498cd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
+    Vendor:   Intel
+    VRAM:     1136 MB
+    Driver:   20.19.15.4352
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.262 seconds
+Platform assembly: C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Junghwan Yang\Desktop\SlotMachine_unity\COMP1004-W2017-Assignment05\Builders\PC\pc_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 3.591410 ms
+Orange - blank - Grapes
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 990
+Turn: 1
+Wins: 0
+Losses: 1
+Win Ratio: 0%
+Loss Ratio: 100%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Bar - Grapes - blank
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 980
+Turn: 2
+Wins: 0
+Losses: 2
+Win Ratio: 0%
+Loss Ratio: 100%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+blank - Orange - Banana
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 970
+Turn: 3
+Wins: 0
+Losses: 3
+Win Ratio: 0%
+Loss Ratio: 100%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+blank - blank - Grapes
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 960
+Turn: 4
+Wins: 0
+Losses: 4
+Win Ratio: 0%
+Loss Ratio: 100%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Cherry - Grapes - Grapes
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Won: $20
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 980
+Turn: 5
+Wins: 1
+Losses: 4
+Win Ratio: 20%
+Loss Ratio: 80%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+blank - blank - blank
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 970
+Turn: 6
+Wins: 1
+Losses: 5
+Win Ratio: 16.66667%
+Loss Ratio: 83.33333%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Banana - Orange - Cherry
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Won: $10
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 980
+Turn: 7
+Wins: 2
+Losses: 5
+Win Ratio: 28.57143%
+Loss Ratio: 71.42857%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+blank - Banana - blank
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 970
+Turn: 8
+Wins: 2
+Losses: 6
+Win Ratio: 25%
+Loss Ratio: 75%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+blank - blank - blank
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 960
+Turn: 9
+Wins: 2
+Losses: 7
+Win Ratio: 22.22222%
+Loss Ratio: 77.77778%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+blank - blank - Bar
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 950
+Turn: 10
+Wins: 2
+Losses: 8
+Win Ratio: 20%
+Loss Ratio: 80%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Banana - Bar - blank
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 940
+Turn: 11
+Wins: 2
+Losses: 9
+Win Ratio: 18.18182%
+Loss Ratio: 81.81818%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Orange - blank - Orange
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 930
+Turn: 12
+Wins: 2
+Losses: 10
+Win Ratio: 16.66667%
+Loss Ratio: 83.33333%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+blank - Grapes - blank
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+You Lost!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Jackpot: 5000
+Player Money: 920
+Turn: 13
+Wins: 2
+Losses: 11
+Win Ratio: 15.38462%
+Loss Ratio: 84.61539%
+
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Close the application
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 3998 -> priority: 1 
