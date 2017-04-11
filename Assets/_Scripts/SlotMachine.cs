@@ -37,12 +37,22 @@ public class SlotMachine : MonoBehaviour {
 	private int bells = 0;
 	private int sevens = 0;
 	private int blanks = 0;
+    private string[] betLine = { " ", " ", " " };
+    public AudioClip spinSound;
+    public AudioClip winSound;
+    public AudioClip loseSound;
+    public Sprite grape;
+    public Sprite banana;
+    public Sprite orange;
+    public Sprite cherry;
+    public Sprite bar;
+    public Sprite bell;
+    public Sprite seven;
+    public Sprite blank;
 
 
-
-
-	/* Utility function to show Player Stats */
-	private void showPlayerStats()
+    /* Utility function to show Player Stats */
+    private void showPlayerStats()
 	{
 		winRatio = winNumber / turn;
 		lossRatio = lossNumber / turn;
@@ -95,7 +105,8 @@ public class SlotMachine : MonoBehaviour {
 			playerMoney += jackpot;
 			jackpot = 1000;
 		}
-	}
+        GameObject.Find("infoText").GetComponent<UnityEngine.UI.Text>().text = "Jackpot!!";
+    }
 
 	/* Utility function to show a win message and increase player money */
 	private void showWinMessage()
@@ -104,7 +115,8 @@ public class SlotMachine : MonoBehaviour {
 		Debug.Log("You Won: $" + winnings);
 		resetFruitTally();
 		checkJackPot();
-	}
+        AudioSource.PlayClipAtPoint(winSound, transform.position);
+    }
 
 	/* Utility function to show a loss message and reduce player money */
 	private void showLossMessage()
@@ -112,10 +124,12 @@ public class SlotMachine : MonoBehaviour {
 		playerMoney -= playerBet;
 		Debug.Log("You Lost!");
 		resetFruitTally();
-	}
+        //Sound add
+        //AudioSource.PlayClipAtPoint(loseSound, transform.position);
+    }
 
-	/* Utility function to check if a value falls within a range of bounds */
-	private bool checkRange(int value, int lowerBounds, int upperBounds)
+    /* Utility function to check if a value falls within a range of bounds */
+    private bool checkRange(int value, int lowerBounds, int upperBounds)
 	{
 		return (value >= lowerBounds && value <= upperBounds) ? true : false;
 
@@ -125,7 +139,7 @@ public class SlotMachine : MonoBehaviour {
     e.g. Bar - Orange - Banana */
 	private string[] Reels()
 	{
-		string[] betLine = { " ", " ", " " };
+		
 		int[] outCome = { 0, 0, 0 };
 
 		for (var spin = 0; spin < 3; spin++)
@@ -243,6 +257,7 @@ public class SlotMachine : MonoBehaviour {
 		}
 		else
 		{
+            winnings = 0;
 			lossNumber++;
 			showLossMessage();
 		}
@@ -279,6 +294,11 @@ public class SlotMachine : MonoBehaviour {
 			determineWinnings();
 			turn++;
 			showPlayerStats();
+            _betLineCheckerFirst();
+            _betLineCheckerSecond();
+            _betLineCheckerThird();
+            //spinSound = Resources.Load<AudioClip>("Textures/Sound - Slot Stop Button - AudioJungle Download");
+            playSpinSound();
 		}
 		else
 		{
@@ -286,11 +306,18 @@ public class SlotMachine : MonoBehaviour {
 		}
         playerBet = 0;
         showAllMoney();
+        _checkPlayerMoney();
+        //add sound
     }
     public void resetStat()
     {
         this.resetAll();
+        _checkPlayerMoney();
         showAllMoney();
+        GameObject.Find("Spin").GetComponent<UnityEngine.UI.Button>().interactable = true;
+        GameObject.Find("1stSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = seven;
+        GameObject.Find("2ndSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = seven;
+        GameObject.Find("3thSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = seven;
     }
 
     public void closeButton()
@@ -324,33 +351,132 @@ public class SlotMachine : MonoBehaviour {
         GameObject.Find("winnerPaidText").GetComponent<UnityEngine.UI.Text>().text = winnings.ToString();
     }
 
+    private void _checkPlayerMoney()
+    {
+        if(playerMoney < 500 || playerMoney-playerBet < 500)
+        {
+            GameObject.Find("bet500").GetComponent<UnityEngine.UI.Button>().interactable = false;
+        } else
+        {
+            GameObject.Find("bet500").GetComponent<UnityEngine.UI.Button>().interactable = true;
+        }
+        if (playerMoney < 100 || playerMoney - playerBet < 100)
+        {
+            GameObject.Find("bet100").GetComponent<UnityEngine.UI.Button>().interactable = false;
+        } else
+        {
+            GameObject.Find("bet100").GetComponent<UnityEngine.UI.Button>().interactable = true;
+        }
+        if (playerMoney < 25 || playerMoney - playerBet < 25)
+        {
+            GameObject.Find("bet25").GetComponent<UnityEngine.UI.Button>().interactable = false;
+        } else
+        {
+            GameObject.Find("bet25").GetComponent<UnityEngine.UI.Button>().interactable = true;
+        }
+        if (playerMoney < 10 || playerMoney - playerBet < 10)
+        {
+            GameObject.Find("bet10").GetComponent<UnityEngine.UI.Button>().interactable = false;
+        } else
+        {
+            GameObject.Find("bet10").GetComponent<UnityEngine.UI.Button>().interactable = true;
+        }
+        if (playerMoney - playerBet < 1)
+        {
+            GameObject.Find("bet1").GetComponent<UnityEngine.UI.Button>().interactable = false;
+            if(playerMoney <= 0)
+            {
+                GameObject.Find("Spin").GetComponent<UnityEngine.UI.Button>().interactable = false;
+            } else
+            {
+                GameObject.Find("Spin").GetComponent<UnityEngine.UI.Button>().interactable = true;
+            }
+        } else
+        {
+            GameObject.Find("bet1").GetComponent<UnityEngine.UI.Button>().interactable = true;
+        }
+    }
+
+    private void _checkPlayerBet()
+    {
+        if(playerBet > playerMoney)
+        {
+            playerBet = playerMoney;
+        }
+        showAllMoney();
+        _checkPlayerMoney();
+    }
+
     public void betPlayerBetOne()
     {
         playerBet += 1;
-        showAllMoney();
+        _checkPlayerBet();
     }
 
     public void betPlayerBetTen()
     {
         playerBet += 10;
-        showAllMoney();
+        _checkPlayerBet();
     }
 
     public void betPlayerBetTwentyfive()
     {
         playerBet += 25;
-        showAllMoney();
+        _checkPlayerBet();
     }
 
     public void betPlayerBetHundred()
     {
         playerBet += 100;
-        showAllMoney();
+        _checkPlayerBet();
     }
 
     public void betPlayerBetFivehundred()
     {
         playerBet += 500;
-        showAllMoney();
+        _checkPlayerBet();
+    }
+
+    public void playSpinSound()
+    {
+        AudioSource.PlayClipAtPoint(spinSound, transform.position);
+    }
+
+    private void _betLineCheckerFirst()
+    {
+        GameObject.Find("1stSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = _betLineChecker(betLine[0]);
+    }
+
+    private void _betLineCheckerSecond()
+    {
+        GameObject.Find("2ndSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = _betLineChecker(betLine[1]);
+    }
+
+    private void _betLineCheckerThird()
+    {
+        GameObject.Find("3thSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = _betLineChecker(betLine[2]);
+    }
+
+    private Sprite _betLineChecker(string betLine)
+    {
+        switch(betLine)
+        {
+            case "Seven":
+                return seven;
+            case "Grapes":
+                return grape;
+            case "Banana":
+                return banana;
+            case "Orange":
+                return orange;
+            case "Bell":
+                return bell;
+            case "Cherry":
+                return cherry;
+            case "Bar":
+                return bar;
+            default:
+                return blank;
+        }
     }
 }
