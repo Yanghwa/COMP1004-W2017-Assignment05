@@ -1,43 +1,23 @@
-﻿using UnityEngine;
+﻿//FileName: SlotMachine.cs
+//FileType: Visual C# Source file - For Unity
+//Author: Junghwan Yang
+//Student ID: 200320739
+//Created On: 04/04/2017
+//Copy Rights: Junghwan Yang
+//Description: This app is for slotmachine - helping unity engine to get the jackpot result, 
+//            changing the image, making the sound, and calculate the player's money
+//  
+
+/////////////////////////////////////////////////////////////////////////
+
+using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// This class is for the functions of slotmachine
+/// </summary>
 public class SlotMachine : MonoBehaviour {
-
+    //Public instances----------------------------------
     public float period = 0.0f;
-
-    // Use this for initialization
-    void Start () {
-        resetAll();
-	}
-
-    // Update is called once per frame
-    void Update()
-    {
-        _changeInfoText();
-        
-    }
-
-
-    private int playerMoney = 1000;
-	private int winnings = 0;
-	private int jackpot = 5000;
-	private float turn = 0.0f;
-	private int playerBet = 0;
-	private float winNumber = 0.0f;
-	private float lossNumber = 0.0f;
-	private string[] spinResult;
-	private string fruits = "";
-	private float winRatio = 0.0f;
-	private float lossRatio = 0.0f;
-	private int grapes = 0;
-	private int bananas = 0;
-	private int oranges = 0;
-	private int cherries = 0;
-	private int bars = 0;
-	private int bells = 0;
-	private int sevens = 0;
-	private int blanks = 0;
-    private string[] betLine = { " ", " ", " " };
     public AudioClip spinSound;
     public AudioClip winSound;
     public AudioClip loseSound;
@@ -50,6 +30,41 @@ public class SlotMachine : MonoBehaviour {
     public Sprite seven;
     public Sprite blank;
 
+    //Private intances---------------------------
+    private int playerMoney = 1000;
+    private int winnings = 0;
+    private int jackpot = 5000;
+    private float turn = 0.0f;
+    private int playerBet = 0;
+    private float winNumber = 0.0f;
+    private float lossNumber = 0.0f;
+    private string[] spinResult;
+    private string fruits = "";
+    private float winRatio = 0.0f;
+    private float lossRatio = 0.0f;
+    private int grapes = 0;
+    private int bananas = 0;
+    private int oranges = 0;
+    private int cherries = 0;
+    private int bars = 0;
+    private int bells = 0;
+    private int sevens = 0;
+    private int blanks = 0;
+    private string[] betLine = { " ", " ", " " };
+
+    // Use this for initialization
+    void Start () {
+        resetAll();
+	}
+
+    // Update is called once per frame
+    void Update()
+    {
+        _changeInfoText();
+        
+    }
+    
+    //private methods--------------------------------
 
     /* Utility function to show Player Stats */
     private void showPlayerStats()
@@ -264,67 +279,6 @@ public class SlotMachine : MonoBehaviour {
 
 	}
 
-	public void OnSpinButtonClick()
-	{
-		//playerBet = 10; // default bet amount
-
-		if (playerMoney == 0)
-		{
-			/*
-			if (Debug.Log("You ran out of Money! \nDo you want to play again?","Out of Money!",MessageBoxButtons.YesNo) == DialogResult.Yes)
-			{
-				resetAll();
-				showPlayerStats();
-			}
-			*/
-		}
-		else if (playerBet > playerMoney)
-		{
-			Debug.Log("You don't have enough Money to place that bet.");
-		}
-		else if (playerBet <= 0)
-		{
-			Debug.Log("All bets must be a positive $ amount.");
-		}
-		else if (playerBet <= playerMoney)
-		{
-			spinResult = Reels();
-			fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
-			Debug.Log(fruits);
-			determineWinnings();
-			turn++;
-			showPlayerStats();
-            _betLineCheckerFirst();
-            _betLineCheckerSecond();
-            _betLineCheckerThird();
-            //spinSound = Resources.Load<AudioClip>("Textures/Sound - Slot Stop Button - AudioJungle Download");
-            playSpinSound();
-		}
-		else
-		{
-			Debug.Log("Please enter a valid bet amount");
-		}
-        playerBet = 0;
-        showAllMoney();
-        _checkPlayerMoney();
-        //add sound
-    }
-    public void resetStat()
-    {
-        this.resetAll();
-        _checkPlayerMoney();
-        showAllMoney();
-        GameObject.Find("Spin").GetComponent<UnityEngine.UI.Button>().interactable = true;
-        GameObject.Find("1stSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = seven;
-        GameObject.Find("2ndSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = seven;
-        GameObject.Find("3thSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = seven;
-    }
-
-    public void closeButton()
-    {
-        Debug.Log("Close the application");
-        Application.Quit();
-    }
     /// <summary>
     /// This method changes infoText to hook users
     /// </summary>
@@ -344,6 +298,7 @@ public class SlotMachine : MonoBehaviour {
         period += UnityEngine.Time.deltaTime;
     }
 
+    //This method shows the information of players as text on UI
     private void showAllMoney()
     {
         GameObject.Find("betText").GetComponent<UnityEngine.UI.Text>().text = playerBet.ToString();
@@ -397,6 +352,7 @@ public class SlotMachine : MonoBehaviour {
         }
     }
 
+    //this method check how much players bet and show info
     private void _checkPlayerBet()
     {
         if(playerBet > playerMoney)
@@ -407,56 +363,24 @@ public class SlotMachine : MonoBehaviour {
         _checkPlayerMoney();
     }
 
-    public void betPlayerBetOne()
-    {
-        playerBet += 1;
-        _checkPlayerBet();
-    }
-
-    public void betPlayerBetTen()
-    {
-        playerBet += 10;
-        _checkPlayerBet();
-    }
-
-    public void betPlayerBetTwentyfive()
-    {
-        playerBet += 25;
-        _checkPlayerBet();
-    }
-
-    public void betPlayerBetHundred()
-    {
-        playerBet += 100;
-        _checkPlayerBet();
-    }
-
-    public void betPlayerBetFivehundred()
-    {
-        playerBet += 500;
-        _checkPlayerBet();
-    }
-
-    public void playSpinSound()
-    {
-        AudioSource.PlayClipAtPoint(spinSound, transform.position);
-    }
-
+    //this method changes the 1st image following the 1st value of betline
     private void _betLineCheckerFirst()
     {
         GameObject.Find("1stSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = _betLineChecker(betLine[0]);
     }
 
+    //this method changes the 2nd image following the 2nd value of betline
     private void _betLineCheckerSecond()
     {
         GameObject.Find("2ndSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = _betLineChecker(betLine[1]);
     }
 
+    //this method changes the 3th image following the 3th value of betline
     private void _betLineCheckerThird()
     {
         GameObject.Find("3thSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = _betLineChecker(betLine[2]);
     }
-
+    //This method checks the value of betline and return sprite image 
     private Sprite _betLineChecker(string betLine)
     {
         switch(betLine)
@@ -479,4 +403,114 @@ public class SlotMachine : MonoBehaviour {
                 return blank;
         }
     }
+    
+    //public methods------------------------------------
+
+    //this method get the betlines values and shows the image when players click the spin button
+    public void OnSpinButtonClick()
+    {
+        //playerBet = 10; // default bet amount
+
+        if (playerMoney == 0)
+        {
+            /*
+			if (Debug.Log("You ran out of Money! \nDo you want to play again?","Out of Money!",MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				resetAll();
+				showPlayerStats();
+			}
+			*/
+        }
+        else if (playerBet > playerMoney)
+        {
+            Debug.Log("You don't have enough Money to place that bet.");
+        }
+        else if (playerBet <= 0)
+        {
+            Debug.Log("All bets must be a positive $ amount.");
+        }
+        else if (playerBet <= playerMoney)
+        {
+            spinResult = Reels();
+            fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
+            Debug.Log(fruits);
+            determineWinnings();
+            turn++;
+            showPlayerStats();
+            _betLineCheckerFirst();
+            _betLineCheckerSecond();
+            _betLineCheckerThird();
+            //spinSound = Resources.Load<AudioClip>("Textures/Sound - Slot Stop Button - AudioJungle Download");
+            playSpinSound();
+        }
+        else
+        {
+            Debug.Log("Please enter a valid bet amount");
+        }
+        playerBet = 0;
+        showAllMoney();
+        _checkPlayerMoney();
+        //add sound
+    }
+
+    //this method resets the status of players when they click the reset button
+    public void resetStat()
+    {
+        this.resetAll();
+        _checkPlayerMoney();
+        showAllMoney();
+        GameObject.Find("Spin").GetComponent<UnityEngine.UI.Button>().interactable = true;
+        GameObject.Find("1stSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = seven;
+        GameObject.Find("2ndSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = seven;
+        GameObject.Find("3thSymbol").GetComponent<UnityEngine.SpriteRenderer>().sprite = seven;
+    }
+
+    //this method closes the application when players click power button, not for webGL
+    public void closeButton()
+    {
+        Debug.Log("Close the application");
+        Application.Quit();
+    }
+
+    //this method bet 1 more to bet money
+    public void betPlayerBetOne()
+    {
+        playerBet += 1;
+        _checkPlayerBet();
+    }
+
+    //this method bet 10 more to bet money
+    public void betPlayerBetTen()
+    {
+        playerBet += 10;
+        _checkPlayerBet();
+    }
+
+    //this method bet 25 more to bet money
+    public void betPlayerBetTwentyfive()
+    {
+        playerBet += 25;
+        _checkPlayerBet();
+    }
+
+    //this method bet 100 more to bet money
+    public void betPlayerBetHundred()
+    {
+        playerBet += 100;
+        _checkPlayerBet();
+    }
+
+    //this method bet 500 more to bet money
+    public void betPlayerBetFivehundred()
+    {
+        playerBet += 500;
+        _checkPlayerBet();
+    }
+
+    //this method makes sound - used on spin button
+    public void playSpinSound()
+    {
+        AudioSource.PlayClipAtPoint(spinSound, transform.position);
+    }
+
 }
